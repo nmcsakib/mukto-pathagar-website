@@ -1,2 +1,8 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+.spin-slow {
+
+    animation: spin 30s linear infinite;
+}
+    
