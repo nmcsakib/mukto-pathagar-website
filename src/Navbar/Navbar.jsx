@@ -66,8 +66,8 @@ const ResponsiveNavbar = () => {
                                 <li onClick={() => handleNavigation('/Books/Publications')}  className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
                                     <BsArrowRight className="text-[#424242] text-[0.9rem]"/> Publication
                                 </li>
-                                <li onClick={() => handleNavigation('/Books/Writters')}  className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
-                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> Writters
+                                <li onClick={() => handleNavigation('/Books/Writers')}  className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
+                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> Writers
                                 </li>
                             </ul>
                     </article>

@@ -1,9 +1,10 @@
 import React from 'react';
 import SectionTitle from '../SectionTitle/SectionTitle';
 
-const BookCategory = ({category}) => {
+const BookCategory = ({category, publicationData, writersDB}) => {
+  console.log(category, writersDB);
     return (
-        <div v className='container mx-auto px-8'>
+        <div v className='container mx-auto px-8 h-screen'>
             <SectionTitle title={category}/>
             <div className="overflow-x-auto">
   <table className="table table-zebra">
@@ -11,29 +12,38 @@ const BookCategory = ({category}) => {
     <thead>
       <tr>
         <th>No.</th>
-        <th>Publication</th>
+        <th>{category}</th>
         <th>Books We have</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
       {/* row 1 */}
+
+      {
+        category == "Publications" ?
+
+       ( publicationData.map((publication, i) => <>
+        
       <tr>
-        <th>1</th>
-        <td>Cy Ganderton</td>
-        <td>500</td>
+        <th>{i+1}</th>
+        <td>{publication.publication}</td>
+        <td>{publication.totalBooks}</td>
+        <td><button className="btn btn-sm">See All Books</button></td>
       </tr>
-      {/* row 2 */}
+        </>))
+        : 
+         (writersDB.map((writer, i) => <>
+        
       <tr>
-        <th>2</th>
-        <td>Hart Hagerty</td>
-        <td>500</td>
+        <th>{i+1}</th>
+        <td>{writer.writer}</td>
+        <td>{writer.totalBooks}</td>
+        <td><button className="btn btn-sm">See All Books</button></td>
       </tr>
-      {/* row 3 */}
-      <tr>
-        <th>3</th>
-        <td>Brice Swyre</td>
-        <td>500</td>
-      </tr>
+        </>))
+      }
+    
     </tbody>
   </table>
 </div>

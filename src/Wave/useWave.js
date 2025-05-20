@@ -1,4 +1,4 @@
-/* eslint-disable no-plusplus */
+ 
 class WaveObj {
   constructor(waveLength, color) {
     this.waveLength = waveLength;

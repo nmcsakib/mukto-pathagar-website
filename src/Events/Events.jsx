@@ -7,7 +7,7 @@ const Events = () => {
   const {year} = useParams();
     return (
         <section className='container mx-auto px-8'>
-        <SectionTitle title={"Events"} descrition={`Evernts of ${year}`} />
+        <SectionTitle title={"Events"} descrition={`Events of ${year}`} />
         
         <div>
             <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">

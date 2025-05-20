@@ -9,7 +9,7 @@ const OurActivities = () => {
         <div className='flex justify-center items-center mt-20 mb-10'>
            <ul className="timeline">
   <li>
-    <div className="timeline-start timeline-box">First Macintosh computer</div>
+    <div className="timeline-start timeline-box">Creation(2022)</div>
     <div className="timeline-middle">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -42,12 +42,12 @@ const OurActivities = () => {
         />
       </svg>
     </div>
-    <div className="timeline-end timeline-box">iMac</div>
+    <div className="timeline-end timeline-box">Won first Award(2023)</div>
     <hr className="bg-primary" />
   </li>
   <li>
     <hr className="bg-primary" />
-    <div className="timeline-start timeline-box">iPod</div>
+    <div className="timeline-start timeline-box">Won 2nd Award(2024)</div>
     <div className="timeline-middle">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -80,12 +80,12 @@ const OurActivities = () => {
         />
       </svg>
     </div>
-    <div className="timeline-end timeline-box">iPhone</div>
+    <div className="timeline-end timeline-box">Next Goal</div>
     <hr />
   </li>
   <li>
     <hr />
-    <div className="timeline-start timeline-box">Apple Watch</div>
+    <div className="timeline-start timeline-box">Next goal</div>
     <div className="timeline-middle">
       <svg
         xmlns="http://www.w3.org/2000/svg"

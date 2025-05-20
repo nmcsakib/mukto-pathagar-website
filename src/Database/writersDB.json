@@ -1,0 +1,38 @@
+[
+  {
+    "writer": "Harper Lee",
+    "totalBooks": 10
+  },
+  {
+    "writer": "George Orwell",
+    "totalBooks": 25
+  },
+  {
+    "writer": "Jane Austen",
+    "totalBooks": 15
+  },
+  {
+    "writer": "F. Scott Fitzgerald",
+    "totalBooks": 12
+  },
+  {
+    "writer": "Gabriel García Márquez",
+    "totalBooks": 1
+  },
+  {
+    "writer": "J.D. Salinger",
+    "totalBooks": 13
+  },
+  {
+    "writer": "Paulo Coelho",
+    "totalBooks": 10
+  },
+  {
+    "writer": "J.R.R. Tolkien",
+    "totalBooks": 61
+  },
+  {
+    "writer": "Fyodor Dostoevsky",
+    "totalBooks": 11
+  }
+]

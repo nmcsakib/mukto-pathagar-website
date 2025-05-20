@@ -1,0 +1,62 @@
+[
+  {
+    "BookName": "To Kill a Mockingbird",
+    "Publication": "J.B. Lippincott & Co.",
+    "Writer": "Harper Lee",
+    "Details": "Published in 1960, this classic novel explores racism and injustice in the American South through the eyes of young Scout Finch."
+  },
+  {
+    "BookName": "1984",
+    "Publication": "Secker & Warburg",
+    "Writer": "George Orwell",
+    "Details": "A dystopian novel that presents a terrifying vision of a totalitarian future dominated by surveillance and mind control."
+  },
+  {
+    "BookName": "Pride and Prejudice",
+    "Publication": "T. Egerton, Whitehall",
+    "Writer": "Jane Austen",
+    "Details": "A romantic novel set in 19th century England that critiques the social structure and explores themes of love and marriage."
+  },
+  {
+    "BookName": "The Great Gatsby",
+    "Publication": "Charles Scribner's Sons",
+    "Writer": "F. Scott Fitzgerald",
+    "Details": "A novel about the American dream and the roaring twenties, centered around the mysterious millionaire Jay Gatsby."
+  },
+  {
+    "BookName": "One Hundred Years of Solitude",
+    "Publication": "Harper & Row",
+    "Writer": "Gabriel García Márquez",
+    "Details": "A masterpiece of magical realism, telling the story of the Buendía family over several generations in the fictional town of Macondo."
+  },
+  {
+    "BookName": "The Catcher in the Rye",
+    "Publication": "Little, Brown and Company",
+    "Writer": "J.D. Salinger",
+    "Details": "A coming-of-age novel narrated by the disenchanted teenager Holden Caulfield as he navigates life in New York City."
+  },
+  {
+    "BookName": "The Alchemist",
+    "Publication": "HarperOne",
+    "Writer": "Paulo Coelho",
+    "Details": "An allegorical novel about a shepherd's journey in search of treasure, teaching readers to follow their dreams and listen to their hearts."
+  },
+  {
+    "BookName": "Animal Farm",
+    "Publication": "Secker & Warburg",
+    "Writer": "George Orwell",
+    "Details": "A political allegory about a group of farm animals who overthrow their human owner, only to end up under a new tyranny."
+  },
+  {
+    "BookName": "The Hobbit",
+    "Publication": "George Allen & Unwin",
+    "Writer": "J.R.R. Tolkien",
+    "Details": "A fantasy adventure about Bilbo Baggins, who embarks on a quest to help a group of dwarves reclaim their mountain home from a dragon."
+  },
+  {
+    "BookName": "Crime and Punishment",
+    "Publication": "The Russian Messenger (serial)",
+    "Writer": "Fyodor Dostoevsky",
+    "Details": "A psychological novel exploring the mind of a poor ex-student who commits murder and the moral dilemmas that follow."
+  }
+]

@@ -8,7 +8,7 @@ import {MdOutlineEmail, MdOutlineLocalPhone} from "react-icons/md";
 
 const ResponsiveFooter = () => {
     return (
-        <footer className="bg-stone-200 shadow-md rounded-xl w-full p-6 sm:p-9">
+        <footer className="bg-stone-200 shadow-md rounded-xl w-full p-6 sm:p-9 mt-5">
             <div
                 className="flex justify-between gap-[30px] flex-col sm:flex-row flex-wrap w-full">
                 <div className="w-full sm:w-[25%] ">

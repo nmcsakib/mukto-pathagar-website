@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import { useParams } from 'react-router-dom';
 import BookCategory from '../BookCategory/BookCategory';
+import booksDB from '../Database/booksDB.json'
+import publicationDB from '../Database/PublicationsDB.json'
+import writersDB from '../Database/writersDB.json'
+
 
 const AllBooks = () => {
+
+  const [selectedBook, setSelectedBook] = useState(null);
     const {books} = useParams();
-    console.log(books);
+
+    console.log(booksDB);
     
         if(books == "All-Books"){
             return(
@@ -26,135 +33,55 @@ const AllBooks = () => {
     </thead>
     <tbody>
       {/* row 1 */}
-      <tr>
-        <th>1</th>
+      {
+        booksDB.map((book, i) => <>
+      <tr key={i}>
+        <th>{i+1}</th>
         <td>
           <div className="flex items-center gap-3">
-            <div className="avatar">
-              <div className="mask mask-squircle h-12 w-12">
-                <img
-                  src="https://img.daisyui.com/images/profile/demo/2@94.webp"
-                  alt="Avatar Tailwind CSS Component" />
-              </div>
-            </div>
+           
             <div>
-              <div className="font-bold">Hart Hagerty</div>
-              <div className="text-sm opacity-50">United States</div>
+              <div className="font-bold">{book.BookName}</div>
             </div>
           </div>
         </td>
         <td>
-          Zemlak, Daniel and Leannon
-          <br />
-          <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
+          {book.Writer}
         </td>
-        <td>Purple</td>
+        <td>{book.Publication}</td>
         <th>
-          <button className="btn btn-ghost btn-xs">details</button>
+          <button  onClick={()=>{
+            setSelectedBook(book.BookName);
+            document.getElementById('my_modal_2').showModal()}} className="btn btn-ghost btn-xs">details</button>
         </th>
       </tr>
-      {/* row 2 */}
-      <tr>
-        <th>2</th>
-        <td>
-          <div className="flex items-center gap-3">
-            <div className="avatar">
-              <div className="mask mask-squircle h-12 w-12">
-                <img
-                  src="https://img.daisyui.com/images/profile/demo/3@94.webp"
-                  alt="Avatar Tailwind CSS Component" />
-              </div>
-            </div>
-            <div>
-              <div className="font-bold">Brice Swyre</div>
-              <div className="text-sm opacity-50">China</div>
-            </div>
-          </div>
-        </td>
-        <td>
-          Carroll Group
-          <br />
-          <span className="badge badge-ghost badge-sm">Tax Accountant</span>
-        </td>
-        <td>Red</td>
-        <th>
-          <button className="btn btn-ghost btn-xs">details</button>
-        </th>
-      </tr>
-      {/* row 3 */}
-      <tr>
-        <th>
-          <label>
-            <input type="checkbox" className="checkbox" />
-          </label>
-        </th>
-        <td>
-          <div className="flex items-center gap-3">
-            <div className="avatar">
-              <div className="mask mask-squircle h-12 w-12">
-                <img
-                  src="https://img.daisyui.com/images/profile/demo/4@94.webp"
-                  alt="Avatar Tailwind CSS Component" />
-              </div>
-            </div>
-            <div>
-              <div className="font-bold">Marjy Ferencz</div>
-              <div className="text-sm opacity-50">Russia</div>
-            </div>
-          </div>
-        </td>
-        <td>
-          Rowe-Schoen
-          <br />
-          <span className="badge badge-ghost badge-sm">Office Assistant I</span>
-        </td>
-        <td>Crimson</td>
-        <th>
-          <button className="btn btn-ghost btn-xs">details</button>
-        </th>
-      </tr>
-      {/* row 4 */}
-      <tr>
-        <th>
-          <label>
-            <input type="checkbox" className="checkbox" />
-          </label>
-        </th>
-        <td>
-          <div className="flex items-center gap-3">
-            <div className="avatar">
-              <div className="mask mask-squircle h-12 w-12">
-                <img
-                  src="https://img.daisyui.com/images/profile/demo/5@94.webp"
-                  alt="Avatar Tailwind CSS Component" />
-              </div>
-            </div>
-            <div>
-              <div className="font-bold">Yancy Tear</div>
-              <div className="text-sm opacity-50">Brazil</div>
-            </div>
-          </div>
-        </td>
-        <td>
-          Wyman-Ledner
-          <br />
-          <span className="badge badge-ghost badge-sm">Community Outreach Specialist</span>
-        </td>
-        <td>Indigo</td>
-        <th>
-          <button className="btn btn-ghost btn-xs">details</button>
-        </th>
-      </tr>
+
+      {/* Open the modal using document.getElementById('ID').showModal() method */}
+<dialog id="my_modal_2" className="modal">
+  <div className="modal-box">
+    <h3 className="font-bold text-lg">{selectedBook}</h3>
+    <p className="py-4">Sorry! No details Available now.</p>
+  </div>
+  <form method="dialog" className="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>  
+        
+        </>)
+      }
     </tbody>
    
   </table>
 </div>
+
+
         </div>
             )
 
         } else{
+
 return(
-    <BookCategory category={books}/>
+    <BookCategory writersDB={writersDB} publicationData={publicationDB} category={books}/>
 )
         }
 
