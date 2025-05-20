@@ -1,9 +1,24 @@
-import React, { useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, {useRef, useState} from "react";
 
+// react icons
+import {IoIosArrowDown, IoIosSearch} from "react-icons/io";
+import {FaDiscord} from "react-icons/fa";
+import {TbBrandGithubFilled} from "react-icons/tb";
+import {CiMenuFries} from "react-icons/ci";
+import {
+    MdDashboardCustomize,
+    MdKeyboardArrowDown,
+} from "react-icons/md";
+import {BsArrowRight} from "react-icons/bs";
+import {CgIfDesign} from "react-icons/cg";
+import {FaCubesStacked} from "react-icons/fa6";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
+import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
-  const navigate = useNavigate();
+const ResponsiveNavbar = () => {
+    const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false)
+
+     const navigate = useNavigate();
   const detailsRef = useRef(null);
 
   const handleNavigation = (path) => {
@@ -13,78 +28,124 @@ const Navbar = () => {
     navigate(path);
   };
 
+
+     const Button = ({btnName}) => {
+     return(
+       <summary className='btn rounded-4xl bg-stone-400 text-white hover:btn-outline hover:bg-transparent hover:text-stone-600 mr-3'>{btnName}
+       {btnName === "Home" ||  <MdKeyboardArrowDown
+                        className="text-[1.5rem] text-white group-hover:text-[#3B9DF8] transition-all duration-500 group-hover:rotate-[180deg]"/>}
+       </summary>
+     )
+  }
     return (
-        <>
-           <div className="navbar flex justify-between pt-8">
- 
-  <div className="hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
-       <li>
-        <details ref={detailsRef}>
-          <summary>Book List</summary>
-          <ul className="bg-base-100 rounded-t-none p-2">
-            <li><button
-         onClick={() => handleNavigation('/about')}
-      >
-        Go to About
-      </button></li>
-            <li><a onClick={() => handleNavigation('/')}>Link 2</a></li>
-          </ul>
-        </details>
-      </li>
-       <li>
-        <details>
-          <summary>Members</summary>
-          <ul className="bg-base-100 rounded-t-none p-2">
-            <li><a>Founder</a></li>
-            <li><a>Advisor Members</a></li>
-            <li><a>Life Time Members</a></li>
-            <li><a>Guest Members</a></li>
-            <li><a>Committee Members</a></li>
-            <li><a>General Members</a></li>
-          </ul>
-        </details>
-      </li>
-       <li>
-        <details>
-          <summary>Events</summary>
-          <ul className="bg-base-100 rounded-t-none p-2">
-            <li><a>Link 1</a></li>
-            <li><a>Link 2</a></li>
-          </ul>
-        </details>
-      </li>
-       <li>
-        <details>
-          <summary>Committee</summary>
-          <ul className="bg-base-100 rounded-t-none p-2">
-            <li><a>Link 1</a></li>
-            <li><a>Link 2</a></li>
-          </ul>
-        </details>
-      </li>
-    
-    </ul>
-  </div>
-  <div className="">
-    
-    <div className="dropdown">
-      <div tabIndex={0} role="button" className="btn btn-ghost md:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /> </svg>
-        <span className="hidden md:inline text-xl"></span>
-      </div>
-      <ul
-        tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a>Homepage</a></li>
-        <li><a>Portfolio</a></li>
-        <li><a>About</a></li>
-      </ul>
-    </div>
-  </div>
-  </div>
-        </>
+
+
+        
+      <section className="container mx-auto px-8">
+         <div className='pt-5'>
+
+       <nav className="flex items-center justify-between w-full relative h-auto">
+
+            {/* nav links */}
+            <ul className="items-center gap-[20px] text-[1rem] text-[#424242] md:flex hidden">
+                <li className="transition-all duration-500 cursor-pointer hover:text-[#3B9DF8] capitalize">
+                    <a onClick={() => handleNavigation('/')}><Button btnName={"Home"}/></a>
+                </li>
+
+                {/* about us mega menu */}
+                <li className=" transition-all duration-500 cursor-pointer hover:text-[#3B9DF8] capitalize flex items-center gap-[3px] group relative">
+                   <Button btnName={"Book List"}/>
+                   
+
+                    <article
+                        className="p-6 bg-stone-300 rounded-md boxShadow absolute top-[40px] z-[-1] -left-2 group-hover:translate-y-0 translate-y-[-20px] group-hover:opacity-100 opacity-0 group-hover:z-30 transition-all duration-300">
+                            <ul className="flex flex-col gap-[7px] text-[#424242]">
+                                <li onClick={() => handleNavigation('/Books/All-Books')} className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
+                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> All Books
+                                </li>
+                                <li onClick={() => handleNavigation('/Books/Publications')}  className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
+                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> Publication
+                                </li>
+                                <li onClick={() => handleNavigation('/Books/Writters')}  className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
+                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> Writters
+                                </li>
+                            </ul>
+                    </article>
+                </li>
+
+                {/* Members button */}
+                <li className=" transition-all duration-500 cursor-pointer hover:text-[#3B9DF8] capitalize flex items-center gap-[3px] group relative">
+                  <Button btnName={"Members"}/>
+
+                    <article
+                        className="p-6 bg-stone-300 rounded-md boxShadow absolute top-[40px] z-[-1] -left-2 group-hover:translate-y-0 translate-y-[-20px] group-hover:opacity-100 opacity-0 group-hover:z-30 transition-all duration-300">
+                            <ul className="flex flex-col gap-[7px] text-[#424242]">
+                                <li onClick={() => handleNavigation('/members/Founder')} className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
+                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> Founder
+                                </li>
+                                <li onClick={() => handleNavigation('/members/Advisior Members')} className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
+                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> Advisior Members
+                                </li>
+                                <li onClick={() => handleNavigation('/members/FounderGuest Members')} className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
+                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> Guest Members
+                                </li>
+                                <li onClick={() => handleNavigation('/members/Life time Members')} className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
+                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> Life time Members
+                                </li>
+                                <li onClick={() => handleNavigation('/members/Committee Members')} className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
+                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> Committee Members
+                                </li>
+                                <li onClick={() => handleNavigation('/members/General Members')} className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
+                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> General Members
+                                </li>
+                              
+                            </ul>
+                    </article>
+                </li>
+
+                {/* Events button */}
+                 <li className=" transition-all duration-500 cursor-pointer hover:text-[#3B9DF8] capitalize flex items-center gap-[3px] group relative">
+                  <Button btnName={"Events"}/>
+
+                    <article
+                        className="p-6 bg-stone-300 rounded-md boxShadow absolute top-[40px] z-[-1] -left-2 group-hover:translate-y-0 translate-y-[-20px] group-hover:opacity-100 opacity-0 group-hover:z-30 transition-all duration-300">
+                            <ul className="flex flex-col gap-[7px] text-[#424242]">
+                                <li onClick={() => handleNavigation('/events/2022')} className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
+                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> 2022
+                                </li>
+                                <li onClick={() => handleNavigation('/events/2023')} className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
+                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> 2023
+                                </li>
+                                <li onClick={() => handleNavigation('/events/2024')} className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
+                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> 2024
+                                </li>
+                                <li onClick={() => handleNavigation('/events/2025')} className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
+                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> 2025
+                                </li>
+                              
+                              
+                            </ul>
+                    </article>
+                </li>
+
+                
+            </ul>
+
+            <div className="flex flex-end items-center gap-[10px]">
+            
+       <ThemeToggle/>
+                <CiMenuFries
+                    className="text-[1.6rem] text-[#424242]c cursor-pointer md:hidden flex"
+                    onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}/>
+            </div>
+
+            {/* mobile sidebar */}
+           
+        </nav>
+                                    </div>
+      </section>
     );
 };
 
-export default Navbar;
+export default ResponsiveNavbar;
+          

@@ -6,3 +6,7 @@
     animation: spin 30s linear infinite;
 }
     
+
+.banner-bg{
+    background-image: url('../src/assets/banner_abstract.png');
+}
