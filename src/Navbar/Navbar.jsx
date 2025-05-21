@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {useState} from "react";
 
 // react icons
 import {IoIosArrowDown, IoIosSearch} from "react-icons/io";
@@ -21,12 +21,9 @@ const ResponsiveNavbar = () => {
     const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false)
 
      const navigate = useNavigate();
-  const detailsRef = useRef(null);
 
   const handleNavigation = (path) => {
-    if (detailsRef.current) {
-      detailsRef.current.removeAttribute('open');
-    }
+  
     navigate(path);
   };
 
@@ -97,7 +94,7 @@ const ResponsiveNavbar = () => {
                                     <BsArrowRight className="text-[#424242] text-[0.9rem]"/> All Books
                                 </li>
                                 <li onClick={() => handleNavigation('/Books/Publications')}  className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
-                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> Publication
+                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> Publications
                                 </li>
                                 <li onClick={() => handleNavigation('/Books/Writers')}  className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
                                     <BsArrowRight className="text-[#424242] text-[0.9rem]"/> Writers

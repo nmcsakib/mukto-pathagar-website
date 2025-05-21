@@ -1,18 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SectionTitle from '../SectionTitle/SectionTitle';
+import { useNavigate } from 'react-router-dom';
+import publicationDB from '../Database/PublicationsDB.json'
+import writersDB from '../Database/writersDB.json'
 
-const BookCategory = ({category, publicationData, writersDB}) => {
-  console.log(category, writersDB);
+const BookCategory = ({ categoryName }) => {
+  const [categories, setCategories] = useState([]);
+ useEffect(() => {
+   if(categoryName == "Publications"){
+    setCategories(publicationDB)
+  }
+     else if (categoryName == "Writers"){
+      setCategories(writersDB)
+    }
+ },[categoryName])
+  
+  console.log(categoryName);
+  const navigate = useNavigate();
+  const handleNavigation = (path) => {
+  
+    navigate(path);
+  };
+
     return (
         <div v className='container mx-auto px-8 h-screen'>
-            <SectionTitle title={category}/>
+            <SectionTitle title={categoryName}/>
             <div className="overflow-x-auto">
   <table className="table table-zebra">
     {/* head */}
     <thead>
       <tr>
         <th>No.</th>
-        <th>{category}</th>
+        <th>{categoryName}</th>
         <th>Books We have</th>
         <th></th>
       </tr>
@@ -21,27 +40,17 @@ const BookCategory = ({category, publicationData, writersDB}) => {
       {/* row 1 */}
 
       {
-        category == "Publications" ?
 
-       ( publicationData.map((publication, i) => <>
+        categories.map((category, i) => <>
         
       <tr>
         <th>{i+1}</th>
-        <td>{publication.publication}</td>
-        <td>{publication.totalBooks}</td>
-        <td><button className="btn btn-sm">See All Books</button></td>
+        <td>{category.name}</td>
+        <td>{category.totalBooks}</td>
+        <td><button onClick={() => handleNavigation(`/Books/${categoryName}/${category.name}`)} className="btn btn-sm">See All Books</button></td>
       </tr>
-        </>))
-        : 
-         (writersDB.map((writer, i) => <>
-        
-      <tr>
-        <th>{i+1}</th>
-        <td>{writer.writer}</td>
-        <td>{writer.totalBooks}</td>
-        <td><button className="btn btn-sm">See All Books</button></td>
-      </tr>
-        </>))
+        </>)
+       
       }
     
     </tbody>

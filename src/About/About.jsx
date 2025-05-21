@@ -24,7 +24,7 @@ const About = () => {
                 handleNavigation('/about')}
             
             } 
-            className="btn bg-[#47698F] text-white border-[#35567b]">Read more
+            className="btn bg-[#fc8787f3] text-white border-[#fc8787f3]">Read more
             </button>
                     </div>
                 </div>

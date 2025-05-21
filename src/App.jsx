@@ -8,6 +8,7 @@ import Footer from './Footer/Footer'
 import Events from './Events/Events'
 import Members from './Members/Members'
 import AllBooks from './AllBooks/AllBooks'
+import Categories from './BookCategory/Categories'
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
       <Route path="/events/:year" element={<Events />} />
       <Route path="/members/:members" element={<Members />} />
       <Route path="/Books/:books" element={<AllBooks />} />
+      <Route path="/Books/:categories/:category" element={<Categories />} />
     </Routes>
 
     </main>

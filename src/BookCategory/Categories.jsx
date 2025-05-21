@@ -1,22 +1,27 @@
-import React, { useState } from 'react';
-import SectionTitle from '../SectionTitle/SectionTitle';
-import { useParams } from 'react-router-dom';
-import BookCategory from '../BookCategory/BookCategory';
+import React, { useEffect, useState } from 'react';
 import booksDB from '../Database/booksDB.json'
+import { useParams } from 'react-router-dom';
+import SectionTitle from '../SectionTitle/SectionTitle';
 
+const Categories = () => {
+    const [selectedBook, setSelectedBook] = useState('');
+  const [filteredBooks, setFilteredBooks] = useState([]);
+    const {categories, category} = useParams();
+    useEffect(() => {
+        const filteredPub = booksDB.filter(book => book.Publication === category);
+        const filteredWri = booksDB.filter(book => book.Writer === category);
+        if(categories == "Publications") {
 
-const AllBooks = () => {
+            setFilteredBooks(filteredPub);
+        } else{
+            setFilteredBooks(filteredWri)
+        }
+    },[])
+    console.log(categories);
+    return (
+          <div className='container mx-auto px-8 h-screen'>
 
-  const [selectedBook, setSelectedBook] = useState(null);
-    const {books} = useParams();
-
-    console.log(booksDB);
-    
-        if(books == "All-Books"){
-            return(
-                <div className='container mx-auto px-8 h-screen'>
-
-            <SectionTitle title={"All Books"}/>
+            <SectionTitle title={`All Books from ${category}` }/>
             <div className="overflow-x-auto">
   <table className="table">
     {/* head */}
@@ -32,7 +37,7 @@ const AllBooks = () => {
     <tbody>
       {/* row 1 */}
       {
-        booksDB.map((book, i) => <>
+        filteredBooks.map((book, i) => <>
       <tr key={i}>
         <th>{i+1}</th>
         <td>
@@ -49,7 +54,7 @@ const AllBooks = () => {
         <td>{book.Publication}</td>
         <th>
           <button  onClick={()=>{
-            setSelectedBook(book.BookName);
+            setSelectedBook('hello');
             document.getElementById('my_modal_2').showModal()}} className="btn btn-ghost btn-xs">details</button>
         </th>
       </tr>
@@ -74,15 +79,7 @@ const AllBooks = () => {
 
 
         </div>
-            )
-
-        } else{
-
-return(
-    <BookCategory categoryName={books}/>
-)
-        }
-
+    );
 };
 
-export default AllBooks;
+export default Categories;
