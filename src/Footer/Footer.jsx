@@ -15,20 +15,20 @@ const ResponsiveFooter = () => {
                     <img src={logo} alt="logo"
                          className="w-[50px] mb-[20px] rounded-full"/>
                     <div className="flex flex-col gap-[20px] text-[#3B9DF8]">
-                                            <span><a
+                                            <span><a href="https://maps.app.goo.gl/xq3SwtFRZ7D17e3r6" target="_blank"
                                                 className="text-[0.9rem] flex items-center gap-[8px] cursor-pointer">
                                                 <IoLocationOutline className="text-[1.2rem]"/>
-                                                Kulaura, Moulvibazar, Sylhet
+                                                Kazirhat, Begumgonj, Noakhali
                                             </a></span>
                         <span><a
                             className="text-[0.9rem] flex items-center gap-[8px] hover:text-blue-400 cursor-pointer">
                                                 <MdOutlineEmail className="text-[1.1rem]"/>
-                                                zenuilibrary@gmail.com
+                                                muktopathagar@gmail.com
                                             </a></span>
                         <span><a
                             className="text-[0.9rem] flex items-center gap-[8px] hover:text-blue-400 cursor-pointer">
                                                 <MdOutlineLocalPhone className="text-[1.1rem]"/>
-                                                +8801305282768
+                                                +8801301437873
                                             </a></span>
                     </div>
                 </div>

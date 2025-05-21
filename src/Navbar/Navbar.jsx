@@ -14,6 +14,7 @@ import {CgIfDesign} from "react-icons/cg";
 import {FaCubesStacked} from "react-icons/fa6";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import { useNavigate } from "react-router-dom";
+import logo from '../assets/logo.jpeg'
 
 const ResponsiveNavbar = () => {
     const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false)
@@ -32,48 +33,28 @@ const ResponsiveNavbar = () => {
      const Button = ({btnName}) => {
      return(
        <summary className='btn rounded-4xl bg-stone-400 text-white hover:btn-outline hover:bg-transparent hover:text-stone-600 mr-3'>{btnName}
-       {btnName === "Home" ||  <MdKeyboardArrowDown
+       {btnName === "About Us" ||  <MdKeyboardArrowDown
                         className="text-[1.5rem] text-white group-hover:text-[#3B9DF8] transition-all duration-500 group-hover:rotate-[180deg]"/>}
        </summary>
      )
   }
     return (
 
-
-        
       <section className="container mx-auto px-8">
          <div className='pt-5'>
 
        <nav className="flex items-center justify-between w-full relative h-auto">
+        <div>
+            <img  onClick={() => handleNavigation('/')} className="cursor-pointer w-14 rounded-full"  src={logo} alt="" />
+        </div>
 
             {/* nav links */}
             <ul className="items-center gap-[20px] text-[1rem] text-[#424242] md:flex hidden">
                 <li className="transition-all duration-500 cursor-pointer hover:text-[#3B9DF8] capitalize">
-                    <a onClick={() => handleNavigation('/')}><Button btnName={"Home"}/></a>
+                    <a onClick={() => handleNavigation('/about')}><Button btnName={"About Us"}/></a>
                 </li>
 
-                {/* about us mega menu */}
-                <li className=" transition-all duration-500 cursor-pointer hover:text-[#3B9DF8] capitalize flex items-center gap-[3px] group relative">
-                   <Button btnName={"Book List"}/>
-                   
-
-                    <article
-                        className="p-6 bg-stone-300 rounded-md boxShadow absolute top-[40px] z-[-1] -left-2 group-hover:translate-y-0 translate-y-[-20px] group-hover:opacity-100 opacity-0 group-hover:z-30 transition-all duration-300">
-                            <ul className="flex flex-col gap-[7px] text-[#424242]">
-                                <li onClick={() => handleNavigation('/Books/All-Books')} className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
-                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> All Books
-                                </li>
-                                <li onClick={() => handleNavigation('/Books/Publications')}  className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
-                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> Publication
-                                </li>
-                                <li onClick={() => handleNavigation('/Books/Writers')}  className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
-                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> Writers
-                                </li>
-                            </ul>
-                    </article>
-                </li>
-
-                {/* Members button */}
+                 {/* Members button */}
                 <li className=" transition-all duration-500 cursor-pointer hover:text-[#3B9DF8] capitalize flex items-center gap-[3px] group relative">
                   <Button btnName={"Members"}/>
 
@@ -99,6 +80,27 @@ const ResponsiveNavbar = () => {
                                     <BsArrowRight className="text-[#424242] text-[0.9rem]"/> General Members
                                 </li>
                               
+                            </ul>
+                    </article>
+                </li>
+
+                {/* Book LIst */}
+                <li className=" transition-all duration-500 cursor-pointer hover:text-[#3B9DF8] capitalize flex items-center gap-[3px] group relative">
+                   <Button btnName={"Book List"}/>
+                   
+
+                    <article
+                        className="p-6 bg-stone-300 rounded-md boxShadow absolute top-[40px] z-[-1] -left-2 group-hover:translate-y-0 translate-y-[-20px] group-hover:opacity-100 opacity-0 group-hover:z-30 transition-all duration-300">
+                            <ul className="flex flex-col gap-[7px] text-[#424242]">
+                                <li onClick={() => handleNavigation('/Books/All-Books')} className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
+                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> All Books
+                                </li>
+                                <li onClick={() => handleNavigation('/Books/Publications')}  className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
+                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> Publication
+                                </li>
+                                <li onClick={() => handleNavigation('/Books/Writers')}  className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
+                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> Writers
+                                </li>
                             </ul>
                     </article>
                 </li>
@@ -142,7 +144,7 @@ const ResponsiveNavbar = () => {
             {/* mobile sidebar */}
            
         </nav>
-                                    </div>
+        </div>
       </section>
     );
 };

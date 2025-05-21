@@ -2,6 +2,15 @@ import { CiCircleChevUp, CiFacebook, CiLinkedin, CiTwitter } from "react-icons/c
 import SectionTitle from "../SectionTitle/SectionTitle";
 import { useParams } from "react-router-dom";
 import member from '../assets/member.png';
+import { Swiper, SwiperSlide  } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { FaUser, FaUserCircle } from "react-icons/fa";
+// import { Pagination } from "swiper";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const Members = () => {
 
@@ -12,11 +21,14 @@ const Members = () => {
         id: 1,
         img: member,
         name: "Harly Rayan",
+
+       work:"Marketing Head",
       },
       {
         id: 2,
         img: member,
         name: "Harly Rayan",
+       work:"Marketing Head",
       },
       {
         id: 3,
@@ -27,6 +39,8 @@ const Members = () => {
       {
         id: 4,
         img: member,
+
+       work:"Marketing Head",
         name: "Kathryn Murphy",
       },
       {
@@ -39,6 +53,7 @@ const Members = () => {
         id: 6,
         img: member,
         name: "Kathryn Murphy",
+       work:"Marketing Head",
       },
       
     ];
@@ -49,9 +64,32 @@ const Members = () => {
           <SectionTitle title={members}/>
            
           </div>
-          <div className=" grid grid-cols-1 md:grid-cols-4  gap-3 py-10 px-5">
+          <div className="py-10 px-5">
+              <Swiper
+          slidesPerView={1}
+          spaceBetween={10}
+          loop={true}
+           modules={[Autoplay, Pagination]}
+  autoplay={{ delay: 3000 }}
+  pagination={{ clickable: true }}
+  
+          breakpoints={{
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+          }}
+          className="mySwiper"
+        >
+
             {cards.map((card, i) => (
-              <div key={i} className="flex bg-[#DEDEDE] p-3 flex-col items-center  relative rounded-xl shadow-lg">
+                 <SwiperSlide keykey={i}>
+
+              <div className="flex bg-[#DEDEDE] p-3 flex-col items-center  relative rounded-xl shadow-lg">
                <div className="relative">
                <img src={card.img} alt="" className="w-80 h-64 rounded-2xl" />
                 
@@ -67,7 +105,9 @@ const Members = () => {
                 <CiCircleChevUp/>
                 </div>
               </div>
+                 </SwiperSlide>
             ))}
+        </Swiper>
           </div>
         </div>
       </div>
