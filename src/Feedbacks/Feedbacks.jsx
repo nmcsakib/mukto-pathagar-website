@@ -10,17 +10,17 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import feedbacks from '../Database/Feedbacks.json'
 import SectionTitle from "../SectionTitle/SectionTitle";
+import { useTranslation } from "react-i18next";
 
 
 const Feedbacks = () => {
 
+  const { t} = useTranslation();
+
   return (
     <section className="container mx-auto px-8">
       <div className="flexcode-container">
-        <SectionTitle
-          title="Inspiring Testimonials"
-          descrition="Learn from the best with our highly acclaimed instructors who bring expertise and passion to every class."
-        />
+        <SectionTitle title={t("Testimonials")}/>
         <Swiper
           slidesPerView={1}
           spaceBetween={10}

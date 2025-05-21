@@ -1,17 +1,12 @@
 import React from 'react';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import AboutImage from '../assets/banner-circle-image.png'
-import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 const About = () => {
 
     const { t} = useTranslation();
-    const navigate = useNavigate();
-    const handleNavigation = (path) => {
-    
-    navigate(path);
-  };
+ 
 
     const AboutContent = ({direction, details}) => {
         return(
@@ -21,10 +16,7 @@ const About = () => {
                 <div className='w-1/2 pl-10'>
                     <p className='text-lg leading-relaxed'>{details}</p>
                     <div className='flex items-center gap-5 pt-5'>
-            <button onClick={() => {
-
-            document.getElementById('my_modal_2').showModal()
-                handleNavigation('/about')}
+            <button onClick={() => { document.getElementById('my_modal_2').showModal() }
             
             } 
             className="btn bg-[#fc8787f3] text-white border-[#fc8787f3]">Read more
@@ -45,7 +37,7 @@ const About = () => {
     }
     return (
         <div  className='container mx-auto px-8'>
-            <SectionTitle title={t('aboutUs')} descrition={'lorem ipmus doler sit, amet. lorem ipmus doler sit, amet lorem ipmus doler sit, amet lorem ipmus doler sit, amet'}></SectionTitle>
+            <SectionTitle title={t('aboutUs')} />
            <AboutContent direction={''} details={t('detailsAboutUs')} /> 
            <AboutContent direction={true} details={t('detailsAboutUs')} /> 
                         {/* Open the modal using document.getElementById('ID').showModal() method */}

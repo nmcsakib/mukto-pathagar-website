@@ -3,9 +3,12 @@ import SectionTitle from '../SectionTitle/SectionTitle';
 import { useParams } from 'react-router-dom';
 import BookCategory from '../BookCategory/BookCategory';
 import booksDB from '../Database/booksDB.json'
+import { useTranslation } from 'react-i18next';
 
 
 const AllBooks = () => {
+  
+  const { t} = useTranslation();
 
   const [selectedBook, setSelectedBook] = useState(null);
     const {books} = useParams();
@@ -16,7 +19,7 @@ const AllBooks = () => {
             return(
                 <div className='container mx-auto px-8 h-screen'>
 
-            <SectionTitle title={"All Books"}/>
+            <SectionTitle title={t("AllBooks")}/>
             <div className="overflow-x-auto">
   <table className="table">
     {/* head */}
