@@ -5,7 +5,7 @@ const SectionTitle = ({title, descrition}) => {
     <div>
        <div className="mt-16">
       <h2
-        className="text-3xl md:text-5xl  text-stone-700 font-bold"
+        className="text-3xl md:text-5xl   font-bold"
       >
         {title}
       </h2>

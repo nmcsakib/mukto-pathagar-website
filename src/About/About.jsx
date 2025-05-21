@@ -2,8 +2,11 @@ import React from 'react';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import AboutImage from '../assets/banner-circle-image.png'
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
+
+    const { t} = useTranslation();
     const navigate = useNavigate();
     const handleNavigation = (path) => {
     
@@ -42,9 +45,9 @@ const About = () => {
     }
     return (
         <div  className='container mx-auto px-8'>
-            <SectionTitle title={'About US'} descrition={'lorem ipmus doler sit, amet. lorem ipmus doler sit, amet lorem ipmus doler sit, amet lorem ipmus doler sit, amet'}></SectionTitle>
-           <AboutContent direction={''} details={'vLorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellat numquam temporibus. Vel error quisquam animi, quis porro eos optio officiis blanditiis iste iusto praesentium ex dolor odio doloremque ipsa deserunt, maiores ducimus, consequatur quaerat. Sint at eaque dicta tempore natus hic exercitationem, culpa, et qui delectus vitae minus accusantium!'} /> 
-           <AboutContent direction={true} details={'vLorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellat numquam temporibus. Vel error quisquam animi, quis porro eos optio officiis blanditiis iste iusto praesentium ex dolor odio doloremque ipsa deserunt, maiores ducimus, consequatur quaerat. Sint at eaque dicta tempore natus hic exercitationem, culpa, et qui delectus vitae minus accusantium!'} /> 
+            <SectionTitle title={t('aboutUs')} descrition={'lorem ipmus doler sit, amet. lorem ipmus doler sit, amet lorem ipmus doler sit, amet lorem ipmus doler sit, amet'}></SectionTitle>
+           <AboutContent direction={''} details={t('detailsAboutUs')} /> 
+           <AboutContent direction={true} details={t('detailsAboutUs')} /> 
                         {/* Open the modal using document.getElementById('ID').showModal() method */}
 <dialog id="my_modal_2" className="modal">
   <div className="modal-box">

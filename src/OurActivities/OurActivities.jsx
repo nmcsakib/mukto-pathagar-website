@@ -1,10 +1,13 @@
 import React from 'react';
 import SectionTitle from '../SectionTitle/SectionTitle';
+import { useTranslation } from 'react-i18next';
 
 const OurActivities = () => {
+  
+  const { t} = useTranslation();
     return (
         <section className='container mx-auto px-8'>
-        <SectionTitle title={"Our Activities"}/>
+        <SectionTitle title={t("OurActivities")}/>
 
         <div className='flex justify-center items-center mt-20 mb-10'>
            <ul className="timeline">

@@ -1,16 +1,14 @@
-import { CiCircleChevUp, CiFacebook, CiLinkedin, CiTwitter } from "react-icons/ci";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import { useParams } from "react-router-dom";
 import member from '../assets/member.png';
 import { Swiper, SwiperSlide  } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import { FaUser, FaUserCircle } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin, } from "react-icons/fa";
 // import { Pagination } from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Members = () => {
 
@@ -74,15 +72,23 @@ const Members = () => {
                <img src={member} alt="" className="w-80 h-64 rounded-2xl" />
                 
                </div>
-                <p className="text-2xl  font-semibold  py-2">
+                <p className="text-2xl text-black  font-semibold  py-2">
                   SAKIB
                 </p>
                 <p>Founder</p>
                 <div className="flex flex-row gap-5 p-3 text-xl">
-                <CiFacebook className="text-orange-500"/>
-                <CiTwitter/>
-                <CiLinkedin/>
-                <CiCircleChevUp/>
+ <a href="https://google.com"><FaFacebook className=""/></a>
+                <a href="https://google.com">
+                <FaXTwitter/>
+                
+                </a>
+                <a href="https://google.com">
+                <FaInstagram/>
+                </a>
+                <a href="https://google.com">
+                <FaLinkedin/>
+                </a>
+          
                 </div>
               </div>
             </div>
@@ -96,7 +102,7 @@ const Members = () => {
           loop={true}
            modules={[Autoplay, Pagination]}
   autoplay={{ delay: 3000 }}
-  pagination={{ clickable: true }}
+  
   
           breakpoints={{
             768: {
@@ -119,15 +125,23 @@ const Members = () => {
                <img src={card.img} alt="" className="w-80 h-64 rounded-2xl" />
                 
                </div>
-                <p className="text-2xl  font-semibold  py-2">
+                <p className="text-2xl text-black  font-semibold  py-2">
                   {card.name}
                 </p>
                 <p>{card.work}</p>
                 <div className="flex flex-row gap-5 p-3 text-xl">
-                <CiFacebook className="text-orange-500"/>
-                <CiTwitter/>
-                <CiLinkedin/>
-                <CiCircleChevUp/>
+                <a href="https://google.com"><FaFacebook className=""/></a>
+                <a href="https://google.com">
+                <FaXTwitter/>
+                
+                </a>
+                <a href="https://google.com">
+                <FaInstagram/>
+                </a>
+                <a href="https://google.com">
+                <FaLinkedin/>
+                </a>
+          
                 </div>
               </div>
                  </SwiperSlide>
