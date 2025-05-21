@@ -15,6 +15,7 @@ import {FaCubesStacked} from "react-icons/fa6";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import { useNavigate } from "react-router-dom";
 import logo from '../assets/logo.jpeg'
+import LangToggle from "../Lang/LangToggle";
 
 const ResponsiveNavbar = () => {
     const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false)
@@ -30,10 +31,10 @@ const ResponsiveNavbar = () => {
   };
 
 
-     const Button = ({btnName}) => {
+     const Button = ({btnName, arrow=true}) => {
      return(
        <summary className='btn rounded-4xl bg-stone-400 text-white hover:btn-outline hover:bg-transparent hover:text-stone-600 mr-3'>{btnName}
-       {btnName === "About Us" ||  <MdKeyboardArrowDown
+       {arrow === false ||  <MdKeyboardArrowDown
                         className="text-[1.5rem] text-white group-hover:text-[#3B9DF8] transition-all duration-500 group-hover:rotate-[180deg]"/>}
        </summary>
      )
@@ -51,7 +52,7 @@ const ResponsiveNavbar = () => {
             {/* nav links */}
             <ul className="items-center gap-[20px] text-[1rem] text-[#424242] md:flex hidden">
                 <li className="transition-all duration-500 cursor-pointer hover:text-[#3B9DF8] capitalize">
-                    <a onClick={() => handleNavigation('/about')}><Button btnName={"About Us"}/></a>
+                    <a onClick={() => handleNavigation('/about')}><Button arrow={false} btnName={"About Us"}/></a>
                 </li>
 
                  {/* Members button */}
@@ -113,16 +114,16 @@ const ResponsiveNavbar = () => {
                         className="p-6 bg-stone-300 rounded-md boxShadow absolute top-[40px] z-[-1] -left-2 group-hover:translate-y-0 translate-y-[-20px] group-hover:opacity-100 opacity-0 group-hover:z-30 transition-all duration-300">
                             <ul className="flex flex-col gap-[7px] text-[#424242]">
                                 <li onClick={() => handleNavigation('/events/2022')} className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
-                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> 2022
+                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> 2022 All Programs
                                 </li>
                                 <li onClick={() => handleNavigation('/events/2023')} className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
-                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> 2023
+                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> 2023 All Programs
                                 </li>
                                 <li onClick={() => handleNavigation('/events/2024')} className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
-                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> 2024
+                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> 2024 All Programs
                                 </li>
                                 <li onClick={() => handleNavigation('/events/2025')} className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
-                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> 2025
+                                    <BsArrowRight className="text-[#424242] text-[0.9rem]"/> 2025 All Programs
                                 </li>
                               
                               
@@ -130,11 +131,17 @@ const ResponsiveNavbar = () => {
                     </article>
                 </li>
 
+                {/* Contact */}
+                <li className="transition-all duration-500 cursor-pointer hover:text-[#3B9DF8] capitalize">
+                    <a href="#contact"><Button arrow={false} btnName={"Contact"}/></a>
+                </li>
+
                 
             </ul>
 
             <div className="flex flex-end items-center gap-[10px]">
             
+       <LangToggle/>
        <ThemeToggle/>
                 <CiMenuFries
                     className="text-[1.6rem] text-[#424242]c cursor-pointer md:hidden flex"

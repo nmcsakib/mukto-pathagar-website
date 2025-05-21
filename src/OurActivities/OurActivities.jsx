@@ -15,7 +15,7 @@ const OurActivities = () => {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
         fill="currentColor"
-        className="text-primary h-5 w-5"
+        className="text-success h-5 w-5"
       >
         <path
           fillRule="evenodd"
@@ -24,16 +24,16 @@ const OurActivities = () => {
         />
       </svg>
     </div>
-    <hr className="bg-primary" />
+    <hr className="bg-[#fc8787f3]" />
   </li>
   <li>
-    <hr className="bg-primary" />
+    <hr className="bg-[#fc8787f3]" />
     <div className="timeline-middle">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
         fill="currentColor"
-        className="text-primary h-5 w-5"
+        className="text-success h-5 w-5"
       >
         <path
           fillRule="evenodd"
@@ -43,17 +43,17 @@ const OurActivities = () => {
       </svg>
     </div>
     <div className="timeline-end timeline-box">Won first Award(2023)</div>
-    <hr className="bg-primary" />
+    <hr className="bg-[#fc8787f3]" />
   </li>
   <li>
-    <hr className="bg-primary" />
+    <hr className="bg-[#fc8787f3]" />
     <div className="timeline-start timeline-box">Won 2nd Award(2024)</div>
     <div className="timeline-middle">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
         fill="currentColor"
-        className="text-primary h-5 w-5"
+        className="text-success h-5 w-5"
       >
         <path
           fillRule="evenodd"

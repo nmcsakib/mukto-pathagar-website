@@ -57,6 +57,7 @@ const Members = () => {
       },
       
     ];
+
     return (
       <div className=" py-10 font-['Poppins']" id="team">
         <div className="container mx-auto">
@@ -64,7 +65,31 @@ const Members = () => {
           <SectionTitle title={members}/>
            
           </div>
-          <div className="py-10 px-5">
+          {
+            members == "Founder" ? <>
+            
+            <div className="py-10 px-5">
+               <div className="flex bg-[#DEDEDE] p-3 flex-col items-center  relative rounded-xl shadow-lg">
+               <div className="relative">
+               <img src={member} alt="" className="w-80 h-64 rounded-2xl" />
+                
+               </div>
+                <p className="text-2xl  font-semibold  py-2">
+                  SAKIB
+                </p>
+                <p>Founder</p>
+                <div className="flex flex-row gap-5 p-3 text-xl">
+                <CiFacebook className="text-orange-500"/>
+                <CiTwitter/>
+                <CiLinkedin/>
+                <CiCircleChevUp/>
+                </div>
+              </div>
+            </div>
+            
+            </> : <>
+            
+            <div className="py-10 px-5">
               <Swiper
           slidesPerView={1}
           spaceBetween={10}
@@ -109,6 +134,8 @@ const Members = () => {
             ))}
         </Swiper>
           </div>
+            </>
+          }
         </div>
       </div>
     );

@@ -14,10 +14,10 @@ const ResponsiveFooter = () => {
                 <div className="w-full sm:w-[25%] ">
                     <img src={logo} alt="logo"
                          className="w-[50px] mb-[20px] rounded-full"/>
-                    <div className="flex flex-col gap-[20px] text-[#3B9DF8]">
+                    <div className="flex flex-col gap-[20px] text-[#fc8787f3]">
                                             <span><a href="https://maps.app.goo.gl/xq3SwtFRZ7D17e3r6" target="_blank"
-                                                className="text-[0.9rem] flex items-center gap-[8px] cursor-pointer">
-                                                <IoLocationOutline className="text-[1.2rem]"/>
+                                                className="text-[0.9rem] flex items-center gap-[8px] cursor-pointer hover:text-blue-400">
+                                                <IoLocationOutline className="text-[1.2rem] "/>
                                                 Kazirhat, Begumgonj, Noakhali
                                             </a></span>
                         <span><a
@@ -75,18 +75,31 @@ const ResponsiveFooter = () => {
                     </div>
                 </div>
 
-                <div className="w-full">
+                <div id="contact" className="w-full">
                     <h3 className="text-[1.2rem] font-semibold text-[#424242] mb-2">Contact With Us</h3>
                     <div className="flex gap-[2px] w-full sm:w-[40%] flex-col text-[#424242] relative">
                         <label className="text-[0.9rem]">Your Email</label>
                         <input type="email"
-                               className="py-3 px-4 pr-[90px] w-full rounded-md border border-primary outline-none"
+                               className="py-3 px-4 pr-[90px] w-full rounded-md border border-[#fc8787f3]  outline-none"
                                placeholder="Email address"/>
-
-                        <button
-                            className="px-4 h-[67%] rounded-r-md bg-primary text-white absolute top-[24px] right-0">Submit
-                        </button>
                     </div>
+                          <div className="w-full sm:w-[40%] pt-2">
+            <label
+                htmlFor="description"
+                className="font-[400] text-[15px] text-text"
+            >
+                Description
+            </label>
+            <textarea
+                id="name"
+                placeholder="Write here"
+                className="border-[#fc8787f3] border outline-none px-4 w-full mt-1 min-h-[100px] bg-gray-200 rounded-md py-3 focus:border-gray-400 transition-colors duration-300"
+            />
+            
+        </div>
+         <button
+                            className="px-4 py-2 mt-2 w-full sm:w-[40%] rounded-md bg-[#fc8787f3] hover:bg-[#fc8787c5] text-white cursor-pointer">Submit
+                        </button>
                 </div>
             </div>
              <div

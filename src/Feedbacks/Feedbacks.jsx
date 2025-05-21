@@ -43,7 +43,7 @@ const Feedbacks = () => {
         >
           {feedbacks?.map((feedback) => (
             <SwiperSlide key={feedback._id}>
-              <div className="flexcode-banner-bg p-5 md:p-5 mb-9 rounded-2xl text-stone-600 border border-slate-500 hover:border-[#ff8ef9] transition-all duration-300 cursor-pointer">
+              <div className="flexcode-banner-bg p-5 md:p-5 mb-9 rounded-2xl text-stone-600 border border-slate-500 hover:border-[#fc8787f3] transition-all duration-300 cursor-pointer">
                 <h2 className="text-xl font-semibold mb-5 line-clamp-1">
                   {feedback.thumbExpression}
                 </h2>
@@ -58,11 +58,11 @@ const Feedbacks = () => {
                   </h3>
                   
                 </span>
-                <div className="w-16 h-16 object-cover rounded-full border-[#0fcda1] bg-secondary-color border absolute bottom-0">
+                <div className="w-16 h-16 object-cover rounded-full border-[#fc8787f3] bg-secondary-color border absolute bottom-0">
                   {feedback?.image ? (
                     <img src={feedback.image} className="w-full rounded-full p-1" alt="" />
                   ) : (
-                    <FaUser className=" text-[#0fcda1] w-full h-full p-1 rounded-full" />
+                    <FaUser className=" text-[#fc8787f3] w-full h-full p-1 rounded-full" />
                   )}
                 </div>
               </div>
