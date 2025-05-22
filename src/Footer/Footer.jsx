@@ -1,5 +1,5 @@
 
-import React from "react";
+import { useState } from "react";
 import logo from '../assets/logo.jpeg'
 
 // react icons
@@ -8,7 +8,18 @@ import {MdOutlineEmail, MdOutlineLocalPhone} from "react-icons/md";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
-const ResponsiveFooter = () => {
+const ResponsiveFooter = ({text}) => {
+      const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch (err) {
+      console.error('Copy failed:', err);
+    }
+  };
     return (
         <footer className="bg-stone-500 shadow-md md:rounded-xl rounded-t-xl w-full p-6 sm:p-9 mt-5">
             <div
@@ -34,19 +45,20 @@ const ResponsiveFooter = () => {
                                             </a></span>
                     </div>
                     <div className="flex flex-row gap-5 py-3 text-lg text-[#fc8787f3] ">
-                     <a className="hover:text-blue-400" href="https://google.com"><FaFacebook className=""/></a>
-                                    <a className="hover:text-blue-400" href="https://google.com">
-                                    <FaXTwitter/>
-                                    
-                                    </a>
-                                    <a className="hover:text-blue-400" href="https://google.com">
-                                    <FaInstagram/>
-                                    </a>
-                                    <a className="hover:text-blue-400" href="https://google.com">
-                                    <FaLinkedin/>
-                                    </a>
-                              
-                                    </div>
+                     <a className="hover:text-blue-400" href="https://google.com">
+                     <FaFacebook /></a>
+                      <a className="hover:text-blue-400" href="https://google.com">
+                      <FaXTwitter/>
+                      
+                      </a>
+                      <a className="hover:text-blue-400" href="https://google.com">
+                      <FaInstagram/>
+                      </a>
+                      <a className="hover:text-blue-400" href="https://google.com">
+                      <FaLinkedin/>
+                      </a>
+                
+                      </div>
                 </div>
                 <div id="contact" className="md:w-1/2 md:border-l-2 border-stone-400 md:pl-20">
                     <h3 className="text-[1.2rem] font-semibold text-[#eeeeee] mb-2">Contact With Us</h3>
@@ -69,16 +81,32 @@ const ResponsiveFooter = () => {
             />
             
         </div>
-         <button
-                            className="px-4 py-2 mt-2 w-full rounded-md bg-[#fc8787f3] hover:bg-[#fc8787c5] text-white cursor-pointer">Submit
-                        </button>
+         <button  onClick={() => { document.getElementById('my_modal_3').showModal() }}
+                  className="px-4 py-2 mt-2 w-full rounded-md bg-[#fc8787f3] hover:bg-[#fc8787c5] text-white cursor-pointer">Submit </button>
                 </div>
             </div>
-             <div
-                    className="border-t border-gray-200 pt-[20px] mt-2 flex items-center w-full flex-wrap gap-[20px] justify-center">
+             <div className="border-t border-gray-200 pt-[20px] mt-2 flex items-center w-full flex-wrap gap-[20px] justify-center">
                     <p className="text-[0.8rem] sm:text-[0.9rem] text-stone-300 text-center">© {new Date().getFullYear()} Mukto Pathagar. All Rights
-                        Reserved. <br /> (Developed by  <span className="underline text-white cursor-pointer"><a href="https://github.com/nmcsakib" target="_blank">SAKIB</a></span>) </p>
+                    Reserved. <br /> (Developed by  <span className="underline text-white cursor-pointer"><a href="https://github.com/nmcsakib" target="_blank">SAKIB</a></span>) </p>
                 </div>
+                <dialog id="my_modal_3" className="modal">
+  <div className="modal-box">
+    <h3 className="font-bold text-lg">Sorry! This Option is under Construction.</h3>
+    <p className="py-4">Please call here:  <span
+      onClick={handleCopy}
+      className="cursor-pointer text-blue-600 hover:underline relative"
+      title={copied ? 'Copied!' : 'Click to copy'}
+    >
+      {text}
+    </span>  to contact.</p>
+  </div>
+  <form method="dialog" className="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>  
+{
+    copied && alert('Number Copied successfully.')
+}
         </footer>
     );
 };

@@ -1,10 +1,6 @@
-import React from "react";
-import { Swiper, SwiperSlide  } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import { FaUser, FaUserCircle } from "react-icons/fa";
-// import { Pagination } from "swiper";
-
-// Import Swiper styles
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import { FaUser } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -15,20 +11,20 @@ import { useTranslation } from "react-i18next";
 
 const Feedbacks = () => {
 
-  const { t} = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <section className="container mx-auto px-8">
       <div className="flexcode-container">
-        <SectionTitle title={t("Testimonials")}/>
+        <SectionTitle title={t("Testimonials")} />
         <Swiper
           slidesPerView={1}
           spaceBetween={10}
           loop={true}
-           modules={[Autoplay, Pagination]}
-  autoplay={{ delay: 3000 }}
-  pagination={{ clickable: true }}
-  
+          modules={[Autoplay, Pagination]}
+          autoplay={{ delay: 3000 }}
+          pagination={{ clickable: true }}
+
           breakpoints={{
             768: {
               slidesPerView: 2,
@@ -43,7 +39,7 @@ const Feedbacks = () => {
         >
           {feedbacks?.map((feedback) => (
             <SwiperSlide key={feedback._id}>
-              <div className="flexcode-banner-bg p-5 md:p-5 mb-9 rounded-2xl text-stone-600 border border-slate-500 hover:border-[#fc8787f3] transition-all duration-300 cursor-pointer">
+              <div className="flexcode-banner-bg p-5 md:p-5 mb-9 rounded-2xl  border border-slate-500 hover:border-[#fc8787f3] transition-all duration-300 cursor-pointer">
                 <h2 className="text-xl font-semibold mb-5 line-clamp-1">
                   {feedback.thumbExpression}
                 </h2>
@@ -56,7 +52,7 @@ const Feedbacks = () => {
                   <h3 className="text-xl font-semibold mb-4 line-clamp-1">
                     ~ {feedback.userName}
                   </h3>
-                  
+
                 </span>
                 <div className="w-16 h-16 object-cover rounded-full border-[#fc8787f3] bg-secondary-color border absolute bottom-0">
                   {feedback?.image ? (

@@ -34,7 +34,7 @@ const ThemeToggle = () => {
       aria-label="Toggle Dark Mode"
       className="btn rounded-full bg-stone-400 text-white hover:btn-outline hover:bg-transparent hover:text-stone-600 flex-end"
     >
-      {theme === 'light' ? <div><p><FaMoon/></p></div> : <div><p><FaSun/></p></div>}
+      {theme === 'light' ? <div><p><FaMoon /></p></div> : <div><p><FaSun /></p></div>}
     </button>
   );
 };
