@@ -1,4 +1,3 @@
-import React, {useState} from "react";
 
 // react icons
 import {IoIosArrowDown, IoIosSearch} from "react-icons/io";
@@ -18,7 +17,6 @@ import logo from '../assets/logo.jpeg'
 import LangToggle from "../Lang/LangToggle";
 
 const ResponsiveNavbar = () => {
-    const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false)
 
      const navigate = useNavigate();
 
@@ -40,20 +38,23 @@ const ResponsiveNavbar = () => {
 
       <section className="container mx-auto px-8">
         <div className="drawer lg:drawer-close">
-  <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+  <input id="my-drawer" type="checkbox" className="drawer-toggle" />
   
-  <div className="drawer-side">
-    <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
+  <div className="drawer-side fixed top-0 left-0 z-50">
+    <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
     <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
       {/* Sidebar content here */}
       {/* About Us */}
   <li className="mb-2">
-    <a onClick={() => handleNavigation('/about')}>
+    <a onClick={() => {
+      handleNavigation('/about');
+      document.getElementById('my-drawer').checked = false;
+    }}>
       <Button arrow={false} btnName="About Us" />
     </a>
   </li>
 
-  {/* Members Dropdown */}
+  {/* Members */}
   <li>
     <div className="collapse collapse-arrow bg-base-100">
       <input type="checkbox" />
@@ -62,18 +63,31 @@ const ResponsiveNavbar = () => {
       </div>
       <div className="collapse-content pl-4">
         <ul className="space-y-2">
-          <li onClick={() => handleNavigation('/members/Founder')}>Founder</li>
-          <li onClick={() => handleNavigation('/members/Advisior Members')}>Advisior Members</li>
-          <li onClick={() => handleNavigation('/members/FounderGuest Members')}>Guest Members</li>
-          <li onClick={() => handleNavigation('/members/Life time Members')}>Life time Members</li>
-          <li onClick={() => handleNavigation('/members/Committee Members')}>Committee Members</li>
-          <li onClick={() => handleNavigation('/members/General Members')}>General Members</li>
+          {[
+            { name: "Founder", path: "/members/Founder" },
+            { name: "Advisior Members", path: "/members/Advisior Members" },
+            { name: "Guest Members", path: "/members/FounderGuest Members" },
+            { name: "Life time Members", path: "/members/Life time Members" },
+            { name: "Committee Members", path: "/members/Committee Members" },
+            { name: "General Members", path: "/members/General Members" },
+          ].map((item) => (
+            <li
+              key={item.name}
+              onClick={() => {
+                handleNavigation(item.path);
+                document.getElementById('my-drawer').checked = false;
+              }}
+              className="cursor-pointer"
+            >
+              {item.name}
+            </li>
+          ))}
         </ul>
       </div>
     </div>
   </li>
 
-  {/* Book List Dropdown */}
+  {/* Book List */}
   <li className="mt-4">
     <div className="collapse collapse-arrow bg-base-100">
       <input type="checkbox" />
@@ -82,15 +96,28 @@ const ResponsiveNavbar = () => {
       </div>
       <div className="collapse-content pl-4">
         <ul className="space-y-2">
-          <li onClick={() => handleNavigation('/Books/All-Books')}>All Books</li>
-          <li onClick={() => handleNavigation('/Books/Publications')}>Publications</li>
-          <li onClick={() => handleNavigation('/Books/Writers')}>Writers</li>
+          {[
+            { name: "All Books", path: "/Books/All-Books" },
+            { name: "Publications", path: "/Books/Publications" },
+            { name: "Writers", path: "/Books/Writers" },
+          ].map((item) => (
+            <li
+              key={item.name}
+              onClick={() => {
+                handleNavigation(item.path);
+                document.getElementById('my-drawer').checked = false;
+              }}
+              className="cursor-pointer"
+            >
+              {item.name}
+            </li>
+          ))}
         </ul>
       </div>
     </div>
   </li>
 
-  {/* Events Dropdown */}
+  {/* Events */}
   <li className="mt-4">
     <div className="collapse collapse-arrow bg-base-100">
       <input type="checkbox" />
@@ -99,19 +126,31 @@ const ResponsiveNavbar = () => {
       </div>
       <div className="collapse-content pl-4">
         <ul className="space-y-2">
-          <li onClick={() => handleNavigation('/events/2022')}>2022 All Programs</li>
-          <li onClick={() => handleNavigation('/events/2023')}>2023 All Programs</li>
-          <li onClick={() => handleNavigation('/events/2024')}>2024 All Programs</li>
-          <li onClick={() => handleNavigation('/events/2025')}>2025 All Programs</li>
+          {["2022", "2023", "2024", "2025"].map((year) => (
+            <li
+              key={year}
+              onClick={() => {
+                handleNavigation(`/events/${year}`);
+                document.getElementById('my-drawer').checked = false;
+              }}
+              className="cursor-pointer"
+            >
+              {year} All Programs
+            </li>
+          ))}
         </ul>
       </div>
     </div>
   </li>
 
   {/* Contact */}
-  <li className="mt-4 flex justify-between flex-row items-center">
+   <li className="mt-4 flex justify-between flex-row items-center">
     <div>
-        <a href="#contact">
+        <a 
+         onClick={() => {
+                document.getElementById('my-drawer').checked = false;
+              }}
+        href="#contact">
       <Button arrow={false} btnName="Contact" />
     </a>
     </div>
@@ -225,7 +264,7 @@ const ResponsiveNavbar = () => {
      <div className="drawer-content flex gap-4 items-center justify-center">
     {/* Page content here */}
        <ThemeToggle/>
-    <label htmlFor="my-drawer-2" className="drawer-button lg:hidden btn rounded-full bg-stone-400 text-white hover:btn-outline hover:bg-transparent hover:text-stone-600 flex-end">
+    <label htmlFor="my-drawer" className="drawer-button lg:hidden btn rounded-full bg-stone-400 text-white hover:btn-outline hover:bg-transparent hover:text-stone-600 flex-end">
      <CiMenuFries/>
     </label>
   </div>

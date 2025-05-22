@@ -10,7 +10,7 @@ const OurActivities = () => {
         <SectionTitle title={t("OurActivities")}/>
 
         <div className='flex justify-center items-center mt-20 mb-10'>
-           <ul className="timeline">
+           <ul className="timeline md:timeline-horizontal timeline-vertical">
   <li>
     <div className="timeline-start timeline-box">Creation(2022)</div>
     <div className="timeline-middle">

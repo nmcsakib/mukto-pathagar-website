@@ -13,8 +13,8 @@ const About = () => {
         return(
 
            <section className=''>
-             <div className={`flex justify-center flex-col ${direction && 'md:flex-row-reverse'} items-center`}>
-                <div className='w-1/2 md:pl-10'>
+             <div className={`flex justify-center flex-col md:flex-row ${direction && 'md:flex-row-reverse'} items-center`}>
+                <div className='md:w-1/2 md:pl-10'>
                     <p className='text-lg leading-relaxed'>{details}</p>
                     <div className='flex items-center gap-5 pt-5'>
             <button onClick={() => { document.getElementById('my_modal_2').showModal() }

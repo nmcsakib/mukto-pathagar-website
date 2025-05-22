@@ -57,7 +57,7 @@ const Members = () => {
     ];
 
     return (
-      <div className=" py-10 font-['Poppins']" id="team">
+      <div className=" py-10 font-['Poppins'] text-black" id="team">
         <div className="container mx-auto">
           <div className="">
           <SectionTitle title={members}/>
@@ -66,26 +66,26 @@ const Members = () => {
           {
             members == "Founder" ? <>
             
-            <div className="py-10 px-5">
+            <div className="py-10 px-5 ">
                <div className="flex bg-[#DEDEDE] p-3 flex-col items-center  relative rounded-xl shadow-lg">
                <div className="relative">
                <img src={member} alt="" className="w-80 h-64 rounded-2xl" />
                 
                </div>
-                <p className="text-2xl text-black  font-semibold  py-2">
+                <p className="text-2xl  font-semibold  py-2">
                   SAKIB
                 </p>
                 <p>Founder</p>
                 <div className="flex flex-row gap-5 p-3 text-xl">
- <a href="https://google.com"><FaFacebook className=""/></a>
-                <a href="https://google.com">
+ <a className="hover:text-blue-400" href="https://google.com"><FaFacebook /></a>
+                <a className="hover:text-blue-400" href="https://google.com">
                 <FaXTwitter/>
                 
                 </a>
-                <a href="https://google.com">
+                <a className="hover:text-blue-400" href="https://google.com">
                 <FaInstagram/>
                 </a>
-                <a href="https://google.com">
+                <a className="hover:text-blue-400" href="https://google.com">
                 <FaLinkedin/>
                 </a>
           

@@ -27,7 +27,7 @@ const Counter = () => {
                 500
               {/* <CircularProgressBar {...props} percent={"125"} /> */}
               {/* <CountUp end={userCount || 0} duration={3} delay={3} /> */}
-              <span className="-ml-8 group-hover:text-[#fc8787f3] duration-300">
+              <span className="-ml-4 group-hover:text-[#fc8787f3] duration-300">
                 {" "}
                 &#43;
               </span>
@@ -39,7 +39,7 @@ const Counter = () => {
               {/* <CountUp start={0} end={blogsLength || 0} duration={3} /> */}
                 500
               {/* <CircularProgressBar {...props} percent={problemLength || 0} /> */}
-              <span className="-ml-8 group-hover:text-[#fc8787f3] duration-300">
+              <span className="-ml-4 group-hover:text-[#fc8787f3] duration-300">
                 &#43;
               </span>
             </h2>
@@ -52,7 +52,7 @@ const Counter = () => {
               {/* <CountUp start={0} end={blogsLength || 0} duration={3} /> */}
                 500
               {/* <CircularProgressBar {...props} percent={blogsLength || 0} /> */}
-              <span className="-ml-8 group-hover:text-[#fc8787f3] duration-300">
+              <span className="-ml-4 group-hover:text-[#fc8787f3] duration-300">
                 &#43;
               </span>
             </h2>
