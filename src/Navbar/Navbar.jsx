@@ -39,6 +39,89 @@ const ResponsiveNavbar = () => {
     return (
 
       <section className="container mx-auto px-8">
+        <div className="drawer lg:drawer-close">
+  <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+  
+  <div className="drawer-side">
+    <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
+    <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+      {/* Sidebar content here */}
+      {/* About Us */}
+  <li className="mb-2">
+    <a onClick={() => handleNavigation('/about')}>
+      <Button arrow={false} btnName="About Us" />
+    </a>
+  </li>
+
+  {/* Members Dropdown */}
+  <li>
+    <div className="collapse collapse-arrow bg-base-100">
+      <input type="checkbox" />
+      <div className="collapse-title">
+        <Button btnName="Members" />
+      </div>
+      <div className="collapse-content pl-4">
+        <ul className="space-y-2">
+          <li onClick={() => handleNavigation('/members/Founder')}>Founder</li>
+          <li onClick={() => handleNavigation('/members/Advisior Members')}>Advisior Members</li>
+          <li onClick={() => handleNavigation('/members/FounderGuest Members')}>Guest Members</li>
+          <li onClick={() => handleNavigation('/members/Life time Members')}>Life time Members</li>
+          <li onClick={() => handleNavigation('/members/Committee Members')}>Committee Members</li>
+          <li onClick={() => handleNavigation('/members/General Members')}>General Members</li>
+        </ul>
+      </div>
+    </div>
+  </li>
+
+  {/* Book List Dropdown */}
+  <li className="mt-4">
+    <div className="collapse collapse-arrow bg-base-100">
+      <input type="checkbox" />
+      <div className="collapse-title">
+        <Button btnName="Book List" />
+      </div>
+      <div className="collapse-content pl-4">
+        <ul className="space-y-2">
+          <li onClick={() => handleNavigation('/Books/All-Books')}>All Books</li>
+          <li onClick={() => handleNavigation('/Books/Publications')}>Publications</li>
+          <li onClick={() => handleNavigation('/Books/Writers')}>Writers</li>
+        </ul>
+      </div>
+    </div>
+  </li>
+
+  {/* Events Dropdown */}
+  <li className="mt-4">
+    <div className="collapse collapse-arrow bg-base-100">
+      <input type="checkbox" />
+      <div className="collapse-title">
+        <Button btnName="Events" />
+      </div>
+      <div className="collapse-content pl-4">
+        <ul className="space-y-2">
+          <li onClick={() => handleNavigation('/events/2022')}>2022 All Programs</li>
+          <li onClick={() => handleNavigation('/events/2023')}>2023 All Programs</li>
+          <li onClick={() => handleNavigation('/events/2024')}>2024 All Programs</li>
+          <li onClick={() => handleNavigation('/events/2025')}>2025 All Programs</li>
+        </ul>
+      </div>
+    </div>
+  </li>
+
+  {/* Contact */}
+  <li className="mt-4 flex justify-between flex-row items-center">
+    <div>
+        <a href="#contact">
+      <Button arrow={false} btnName="Contact" />
+    </a>
+    </div>
+    <div>
+        <img  onClick={() => handleNavigation('/')} className="cursor-pointer w-14 rounded-full"  src={logo} alt="" />
+    </div>
+  </li>
+    </ul>
+  </div>
+</div>
          <div className='pt-5'>
 
        <nav className="flex items-center justify-between w-full relative h-auto">
@@ -139,10 +222,13 @@ const ResponsiveNavbar = () => {
             <div className="flex flex-end items-center gap-[10px]">
             
        <LangToggle/>
+     <div className="drawer-content flex gap-4 items-center justify-center">
+    {/* Page content here */}
        <ThemeToggle/>
-                <CiMenuFries
-                    className="text-[1.6rem] text-[#424242]c cursor-pointer md:hidden flex"
-                    onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}/>
+    <label htmlFor="my-drawer-2" className="drawer-button lg:hidden btn rounded-full bg-stone-400 text-white hover:btn-outline hover:bg-transparent hover:text-stone-600 flex-end">
+     <CiMenuFries/>
+    </label>
+  </div>
             </div>
 
             {/* mobile sidebar */}

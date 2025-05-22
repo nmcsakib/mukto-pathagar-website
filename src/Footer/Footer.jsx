@@ -10,9 +10,9 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const ResponsiveFooter = () => {
     return (
-        <footer className="bg-stone-200 shadow-md rounded-xl w-full p-6 sm:p-9 mt-5">
+        <footer className="bg-stone-500 shadow-md md:rounded-xl rounded-t-xl w-full p-6 sm:p-9 mt-5">
             <div
-                className="flex justify-around items-center">
+                className="flex justify-around flex-col md:flex-row gap-16 md:gap-0 items-center">
                 <div className="">
                     <img src={logo} alt="logo"
                          className="w-[50px] mb-[20px] rounded-full"/>
@@ -34,23 +34,23 @@ const ResponsiveFooter = () => {
                                             </a></span>
                     </div>
                     <div className="flex flex-row gap-5 py-3 text-lg text-[#fc8787f3] ">
-                     <a href="https://google.com"><FaFacebook className=""/></a>
-                                    <a href="https://google.com">
+                     <a className="hover:text-blue-400" href="https://google.com"><FaFacebook className=""/></a>
+                                    <a className="hover:text-blue-400" href="https://google.com">
                                     <FaXTwitter/>
                                     
                                     </a>
-                                    <a href="https://google.com">
+                                    <a className="hover:text-blue-400" href="https://google.com">
                                     <FaInstagram/>
                                     </a>
-                                    <a href="https://google.com">
+                                    <a className="hover:text-blue-400" href="https://google.com">
                                     <FaLinkedin/>
                                     </a>
                               
                                     </div>
                 </div>
-                <div id="contact" className="w-1/2 border-l-2 border-stone-400 pl-20">
-                    <h3 className="text-[1.2rem] font-semibold text-[#424242] mb-2">Contact With Us</h3>
-                    <div className="flex gap-[2px] w-full  flex-col text-[#424242] relative">
+                <div id="contact" className="md:w-1/2 md:border-l-2 border-stone-400 md:pl-20">
+                    <h3 className="text-[1.2rem] font-semibold text-[#eeeeee] mb-2">Contact With Us</h3>
+                    <div className="flex gap-[2px] w-full  flex-col text-[#eeeeee] relative">
                         <label className="text-[0.9rem]">Your Email</label>
                         <input type="email"
                                className="py-3 px-4 pr-[90px] w-full rounded-md border border-[#fc8787f3]  outline-none"
@@ -59,14 +59,13 @@ const ResponsiveFooter = () => {
                           <div className="w-full pt-2">
             <label
                 htmlFor="description"
-                className="font-[400] text-[15px] text-text"
-            >
+                className="font-[400] text-[15px] text-[#eeeeee]" >
                 Description
             </label>
             <textarea
                 id="name"
                 placeholder="Write here"
-                className="border-[#fc8787f3] border outline-none px-4 w-full mt-1 min-h-[100px] bg-gray-200 rounded-md py-3 focus:border-gray-400 transition-colors duration-300"
+                className="border-[#fc8787f3] border outline-none px-4 w-full mt-1 min-h-[100px] bg-transparent rounded-md py-3 focus:border-gray-400 transition-colors duration-300"
             />
             
         </div>
@@ -76,9 +75,9 @@ const ResponsiveFooter = () => {
                 </div>
             </div>
              <div
-                    className="border-t border-gray-200 pt-[20px] flex items-center w-full flex-wrap gap-[20px] justify-center">
-                    <p className="text-[0.8rem] sm:text-[0.9rem] text-gray-600 text-center">© {new Date().getFullYear()} Mukto Pathagar. All Rights
-                        Reserved. <br /> (Developed by  <span className="underline text-blue-500 cursor-pointer"><a href="https://github.com/nmcsakib" target="_blank">SAKIB</a></span>) </p>
+                    className="border-t border-gray-200 pt-[20px] mt-2 flex items-center w-full flex-wrap gap-[20px] justify-center">
+                    <p className="text-[0.8rem] sm:text-[0.9rem] text-stone-300 text-center">© {new Date().getFullYear()} Mukto Pathagar. All Rights
+                        Reserved. <br /> (Developed by  <span className="underline text-white cursor-pointer"><a href="https://github.com/nmcsakib" target="_blank">SAKIB</a></span>) </p>
                 </div>
         </footer>
     );
