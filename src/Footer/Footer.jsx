@@ -77,7 +77,7 @@ const ResponsiveFooter = ({text}) => {
             <textarea
                 id="name"
                 placeholder="Write here"
-                className="border-[#fc8787f3] border outline-none px-4 w-full mt-1 min-h-[100px] bg-transparent rounded-md py-3 focus:border-gray-400 transition-colors duration-300"
+                className="focus:border-[#fc8787f3] border outline-none px-4 w-full mt-1 min-h-[100px] bg-transparent rounded-md py-3 border-gray-400 transition-colors duration-300 text-white"
             />
             
         </div>

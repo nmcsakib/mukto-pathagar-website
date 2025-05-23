@@ -1,14 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const SectionTitle = ({pathname, title, descrition }) => {
+const SectionTitle = ({pathname, title }) => {
   console.log(pathname);
   const decodedPath = decodeURIComponent(pathname);
 const navigate = useNavigate();
 ;
   return (
-    <div>
-      <div className="mt-16">
+    <>
+      <div className="mt-16 ml-4">
         {
           (pathname != '/' || pathname == undefined) && <>
             <div className=" text-sm py-2">
@@ -23,13 +23,11 @@ const navigate = useNavigate();
           className="text-3xl md:text-4xl  font-bold" >
           {title}
         </h2>
-        <p className=" mt-4 text-stone-400 w-1/3" >
-          {descrition}
-        </p>
+       
       </div>
 
       <div className="divider"></div>
-    </div>
+    </>
   );
 };
 

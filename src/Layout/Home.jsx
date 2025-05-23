@@ -1,6 +1,7 @@
 import About from '../About/About';
 import Banner from '../Banner/Banner';
 import Counter from '../Counter/Counter';
+import FAQ from '../FAQ/FAQ';
 import Feedbacks from '../Feedbacks/Feedbacks';
 import Map from '../Map/Map';
 import OurActivities from '../OurActivities/OurActivities';
@@ -16,6 +17,7 @@ const Home = () => {
         <Counter/>
         <About/>
         <Map/>
+        <FAQ/>
         <Feedbacks/>
     </>
     );
