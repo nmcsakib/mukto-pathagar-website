@@ -13,8 +13,8 @@ const Home = () => {
         <Canvas/>
         </div>
         <OurActivities/>
-        <About/>
         <Counter/>
+        <About/>
         <Map/>
         <Feedbacks/>
     </>

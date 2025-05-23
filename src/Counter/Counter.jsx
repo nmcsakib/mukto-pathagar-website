@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 const Counter = () => {
+  const navigate = useNavigate();
 
   return (
     <section className="container mx-auto p-8 my-5">
@@ -14,6 +17,7 @@ const Counter = () => {
               </span>
             </h2>
             <p className="text-lg tracking-wider">Members.</p>
+            <button onClick={() => navigate('/members/General Members')} className="btn btn-outline">See All Members.</button>
           </div>
           <div className="flex flex-col gap-2 md:gap-5 justify-center items-center pt-8 md:pt-0">
             <h2 className="text-5xl flex items-center gap-5 md:text-7xl font-bold">
@@ -25,15 +29,17 @@ const Counter = () => {
             <p className="text-lg tracking-wider">
               Total Books.
             </p>
+            <button onClick={() => navigate('/Books/All-Books')} className="btn btn-outline">See All Books.</button>
           </div>
-          <div className="flex flex-col gap-2 md:gap-5 justify-center items-center pt-8 md:pt-0">
+          <div className="flex flex-col gap-2 md:gap-5 justify-center border-b-2 md:border-none border-gray-500  items-center pt-8 md:pt-0">
             <h2 className="text-5xl flex items-center gap-5 md:text-7xl font-bold">
               500
               <span className="-ml-4 group-hover:text-[#fc8787f3] duration-300">
                 &#43;
               </span>
             </h2>
-            <p className="text-lg tracking-wider">Total Awards.</p>
+            <p className="text-lg tracking-wider">Total Events.</p>
+            <button onClick={() => navigate(`/events/${new Date().getFullYear()}`)} className="btn btn-outline">See All Events.</button>
           </div>
         </div>
       </div>

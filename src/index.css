@@ -8,6 +8,12 @@
   font-style: normal;
 }
 
+::selection {
+  background: #ffacaca8;
+  color: #303030;
+  -webkit-text-fill-color: #303030;
+}
+
 .bangla-font {
   font-family: 'Nikosh', Arial, Helvetica, sans-serif;
 }

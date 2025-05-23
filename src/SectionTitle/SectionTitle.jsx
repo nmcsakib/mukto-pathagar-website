@@ -5,11 +5,7 @@ const SectionTitle = ({pathname, title, descrition }) => {
   console.log(pathname);
   const decodedPath = decodeURIComponent(pathname);
 const navigate = useNavigate();
-
-  const handleNavigate = (path) => {
-
-    navigate(path);
-  };
+;
   return (
     <div>
       <div className="mt-16">
@@ -17,7 +13,7 @@ const navigate = useNavigate();
           (pathname != '/' || pathname == undefined) && <>
             <div className=" text-sm py-2">
   <ul className='flex items-center gap-3'>
-    <li><a onClick={() => handleNavigate('/')} className='hover:underline cursor-pointer'>Home</a></li>
+    <li><a onClick={() => navigate('/')} className='hover:underline cursor-pointer'>Home</a></li>
     <li className='capitalize'>{decodedPath?.replaceAll('/',' → ')}</li>
   </ul>
 </div>

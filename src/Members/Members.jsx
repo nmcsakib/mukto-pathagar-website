@@ -93,7 +93,7 @@ const Members = () => {
 
           </> : <>
 
-            <div className="py-10 px-5 text-black">
+            <div className="py-10 px-5 text-black select-none">
               <Swiper
                 slidesPerView={1}
                 spaceBetween={10}
