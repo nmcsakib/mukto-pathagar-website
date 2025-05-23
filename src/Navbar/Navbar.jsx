@@ -1,7 +1,6 @@
 
 // react icons
 import { CiMenuFries } from "react-icons/ci";
-import { MdKeyboardArrowDown } from "react-icons/md";
 import { BsArrowRight } from "react-icons/bs";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import { useNavigate } from "react-router-dom";
@@ -40,7 +39,7 @@ const ResponsiveNavbar = () => {
 
   return (
 
-    <section className="container mx-auto px-8">
+    <section className="container mx-auto px-8 normal-font">
       {/* Drawer */}
       <div className="drawer lg:drawer-close">
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />

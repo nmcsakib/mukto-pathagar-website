@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import SectionTitle from '../SectionTitle/SectionTitle';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import BookCategory from '../BookCategory/BookCategory';
 import booksDB from '../Database/booksDB.json'
 import { useTranslation } from 'react-i18next';
@@ -12,6 +12,7 @@ const AllBooks = () => {
 
   const [selectedBook, setSelectedBook] = useState(null);
   const { books } = useParams();
+  const link = useLocation();
 
   console.log(booksDB);
 
@@ -19,7 +20,7 @@ const AllBooks = () => {
     return (
       <div className='container mx-auto px-8 h-screen'>
 
-        <SectionTitle title={t("AllBooks")} />
+        <SectionTitle pathname={link.pathname} title={t("AllBooks")} />
         <div className="overflow-x-auto">
           <table className="table">
             {/* head */}

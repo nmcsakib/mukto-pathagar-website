@@ -7,16 +7,18 @@ import "swiper/css/navigation";
 import feedbacks from '../Database/Feedbacks.json'
 import SectionTitle from "../SectionTitle/SectionTitle";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
 
 
 const Feedbacks = () => {
 
   const { t } = useTranslation();
+  const link = useLocation();
 
   return (
     <section className="container mx-auto px-8">
       <div className="flexcode-container">
-        <SectionTitle title={t("Testimonials")} />
+        <SectionTitle pathname={link.pathname} title={t("Testimonials")} />
         <Swiper
           slidesPerView={1}
           spaceBetween={10}

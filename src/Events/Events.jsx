@@ -1,16 +1,17 @@
 import SectionTitle from '../SectionTitle/SectionTitle';
 import EventImage1 from '../assets/banner-circle-image.png'
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 const Events = () => {
 
   const { t } = useTranslation();
   const { year } = useParams();
+  const link = useLocation(); 
   const nums = [1, 2, 3, 4, 5, 6, 7];
   return (
     <section className='container mx-auto px-8'>
-      <SectionTitle title={t("Events")} descrition={`Events of ${year}`} />
+      <SectionTitle pathname={link.pathname} title={t("Events")} descrition={`Events of ${year}`} />
 
       <div>
         <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">

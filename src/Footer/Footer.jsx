@@ -21,7 +21,7 @@ const ResponsiveFooter = ({text}) => {
     }
   };
     return (
-        <footer className="bg-stone-500 shadow-md md:rounded-xl rounded-t-xl w-full p-6 sm:p-9 mt-5">
+        <footer className="bg-stone-900 shadow-md md:rounded-xl rounded-t-xl w-full p-6 sm:p-9 mt-5">
             <div
                 className="flex justify-around flex-col md:flex-row gap-16 md:gap-0 items-center">
                 <div className="">

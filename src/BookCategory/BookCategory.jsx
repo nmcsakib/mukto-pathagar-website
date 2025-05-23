@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import SectionTitle from '../SectionTitle/SectionTitle';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import publicationDB from '../Database/PublicationsDB.json'
 import writersDB from '../Database/writersDB.json'
 
@@ -17,6 +17,7 @@ const BookCategory = ({ categoryName }) => {
 
   console.log(categoryName);
   const navigate = useNavigate();
+  const link = useLocation();
   const handleNavigation = (path) => {
 
     navigate(path);
@@ -24,7 +25,7 @@ const BookCategory = ({ categoryName }) => {
 
   return (
     <div v className='container mx-auto px-8 h-screen'>
-      <SectionTitle title={categoryName} />
+      <SectionTitle pathname={link.pathname} title={categoryName} />
       <div className="overflow-x-auto">
         <table className="table table-zebra">
           {/* head */}

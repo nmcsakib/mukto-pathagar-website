@@ -5,9 +5,11 @@ import icon from "leaflet/dist/images/marker-icon.png";
 import L from "leaflet";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 
 const Map = () => {
   const { t } = useTranslation();
+  const link = useLocation();
   const position = [22.984564548209462, 91.18471210781772];
   let DefaultIcon = L.icon({
     iconUrl: icon,
@@ -17,7 +19,7 @@ const Map = () => {
   L.Marker.prototype.options.icon = DefaultIcon;
   return (
     <div className='container mx-auto px-8'>
-      <SectionTitle title={t('location')} />
+      <SectionTitle pathname={link.pathname} title={t('location')} />
       <div className="flex justify-center items-center px-10">
         <MapContainer style={{ height: '300px', width: '1000px' }} center={position} zoom={10} scrollWheelZoom={true}>
           <TileLayer

@@ -1,5 +1,5 @@
 import SectionTitle from "../SectionTitle/SectionTitle";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import member from '../assets/member.png';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
@@ -10,6 +10,7 @@ import { FaXTwitter } from "react-icons/fa6";
 const Members = () => {
 
   const { members } = useParams();
+  const link = useLocation();
   console.log(members);
   const cards = [
     {
@@ -57,7 +58,7 @@ const Members = () => {
     <div className=" py-10 font-['Poppins'] " id="team">
       <div className="container mx-auto">
         <div>
-          <SectionTitle title={members} />
+          <SectionTitle pathname={(link.pathname)} title={members} />
 
         </div>
         {

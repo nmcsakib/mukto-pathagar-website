@@ -4,13 +4,16 @@ import Navbar from './Navbar/Navbar'
 import Footer from './Footer/Footer'
 import './i18n.js';
 import ScrollToTop from './ScrollTop.jsx'
+import { useTranslation } from 'react-i18next';
 
 function App() {
+  const { i18n } = useTranslation();
+    const currentLang = i18n.language;
 
   return (
     <>
 
-      <main className="overflow-x-hidden">
+      <main className={`overflow-x-hidden ${currentLang == 'bn' && 'bangla-font'}`}>
 
         <div className='relative w-full'>
           <Navbar />

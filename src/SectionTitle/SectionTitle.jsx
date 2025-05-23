@@ -1,12 +1,30 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const SectionTitle = ({ title, descrition }) => {
+const SectionTitle = ({pathname, title, descrition }) => {
+  console.log(pathname);
+  const decodedPath = decodeURIComponent(pathname);
+const navigate = useNavigate();
+
+  const handleNavigate = (path) => {
+
+    navigate(path);
+  };
   return (
     <div>
       <div className="mt-16">
+        {
+          (pathname != '/' || pathname == undefined) && <>
+            <div className=" text-sm py-2">
+  <ul className='flex items-center gap-3'>
+    <li><a onClick={() => handleNavigate('/')} className='hover:underline cursor-pointer'>Home</a></li>
+    <li className='capitalize'>{decodedPath?.replaceAll('/',' → ')}</li>
+  </ul>
+</div>
+          </>
+        }
         <h2
-          className="text-3xl md:text-5xl   font-bold"
-        >
+          className="text-3xl md:text-4xl  font-bold" >
           {title}
         </h2>
         <p className=" mt-4 text-stone-400 w-1/3" >

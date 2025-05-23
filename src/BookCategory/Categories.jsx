@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import booksDB from '../Database/booksDB.json'
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import SectionTitle from '../SectionTitle/SectionTitle';
 
 const Categories = () => {
     const [selectedBook, setSelectedBook] = useState('');
   const [filteredBooks, setFilteredBooks] = useState([]);
     const {categories, category} = useParams();
+    const link = useLocation();
     useEffect(() => {
         const filteredPub = booksDB.filter(book => book.Publication === category);
         const filteredWri = booksDB.filter(book => book.Writer === category);
@@ -21,7 +22,7 @@ const Categories = () => {
     return (
           <div className='container mx-auto px-8 h-screen'>
 
-            <SectionTitle title={`All Books from ${category}` }/>
+            <SectionTitle pathname={link.pathname} title={`All Books from ${category}` }/>
             <div className="overflow-x-auto">
   <table className="table">
     {/* head */}

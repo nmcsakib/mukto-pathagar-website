@@ -1,12 +1,14 @@
+import { useLocation } from 'react-router-dom';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import { useTranslation } from 'react-i18next';
 
 const OurActivities = () => {
 
   const { t } = useTranslation();
+  const link = useLocation();
   return (
     <section className='container mx-auto px-8'>
-      <SectionTitle title={t("OurActivities")} />
+      <SectionTitle pathname={link.pathname} title={t("OurActivities")} />
 
       <div className='flex justify-center items-center mt-20 mb-10'>
         <ul className="timeline md:timeline-horizontal timeline-vertical">

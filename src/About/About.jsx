@@ -1,12 +1,15 @@
+import { useLocation } from 'react-router-dom';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import AboutImage from '../assets/banner-circle-image.png'
 import { useTranslation } from 'react-i18next';
 
 const About = () => {
+   
+  const link = useLocation();
+   console.log(link);
 
   const { t } = useTranslation();
   const { content1, content2 } = t('aboutContent');
-
 
   const AboutContent = ({ direction, details }) => {
     return (
@@ -37,7 +40,8 @@ const About = () => {
   }
   return (
     <div className='container mx-auto px-8'>
-      <SectionTitle title={t('aboutUs')} />
+    
+      <SectionTitle pathname={link.pathname} title={t('aboutUs')} />
       <AboutContent direction={''} details={content1} />
       <AboutContent direction={true} details={content2} />
       {/* Open the modal using document.getElementById('ID').showModal() method */}
