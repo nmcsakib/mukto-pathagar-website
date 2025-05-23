@@ -1,4 +1,5 @@
 import About from '../About/About';
+import Album from '../Album/Album';
 import Banner from '../Banner/Banner';
 import Counter from '../Counter/Counter';
 import FAQ from '../FAQ/FAQ';
@@ -16,6 +17,7 @@ const Home = () => {
         <OurActivities/>
         <Counter/>
         <About/>
+        <Album/>
         <Map/>
         <FAQ/>
         <Feedbacks/>

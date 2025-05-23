@@ -17,7 +17,7 @@ const LangToggle = () => {
       aria-label="Toggle Dark Mode"
       className="btn rounded-full bg-stone-400 text-white hover:btn-outline hover:bg-transparent hover:text-stone-600 flex-end"
     ><FaGlobe />
-      {lang === true ? <div><p>BAN</p></div> : <div><p>ENG</p></div>}
+      {lang === true ? <div><p>বাংলা</p></div> : <div><p>ENG</p></div>}
     </button>
   );
 };
