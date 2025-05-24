@@ -6,6 +6,8 @@ import FAQ from '../FAQ/FAQ';
 import Feedbacks from '../Feedbacks/Feedbacks';
 import Map from '../Map/Map';
 import OurActivities from '../OurActivities/OurActivities';
+import Partners from '../Partners/Partners';
+import UpcomingEvent from '../UpcomingEvent/UpcomingEvent';
 import Canvas from '../Wave/Canvas';
 const Home = () => {
     return (
@@ -17,9 +19,11 @@ const Home = () => {
         <OurActivities/>
         <Counter/>
         <About/>
+        <UpcomingEvent/>
         <Album/>
         <Map/>
         <FAQ/>
+        <Partners/>
         <Feedbacks/>
     </>
     );
