@@ -48,7 +48,7 @@ const UpcomingEvent = () => {
                     PM</h4>
 
                 <button
-    className="relative inline-flex items-center px-3 md:px-8 py-1 md:py-2.5 overflow-hidden text-lg font-medium text-base-content rounded-lg bg-lime-500 hover:text-black group hover:bg-lime-400 cursor-pointer">
+    className="relative inline-flex items-center px-3 md:px-8 py-1 md:py-2.5 overflow-hidden text-lg font-medium text-base-content rounded-lg bg-[#33a037] hover:text-black group hover:bg-[#33a037] cursor-pointer">
       <span
           className="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
         <span
@@ -70,6 +70,7 @@ const UpcomingEvent = () => {
         </div>
     );
 };
-
 export default UpcomingEvent;
             
+
+

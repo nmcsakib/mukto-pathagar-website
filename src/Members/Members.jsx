@@ -8,56 +8,26 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { FaXTwitter } from "react-icons/fa6";
 import { SwiperNavButtons } from "../components/SwiperNavButtons";
+import { useEffect, useState } from "react";
+import loadCommitteeMembers from '../Database/committee.json'
 
 const Members = () => {
 
   const { members } = useParams();
+  const [committeeMembers, setCommitteeMembers] = useState([]);
+  const [committeeMember, setCommitteeMember] = useState([]);
   const link = useLocation();
-  console.log(members);
-  const cards = [
-    {
-      id: 1,
-      img: member,
-      name: "Harly Rayan",
+  console.log(loadCommitteeMembers);
+  useEffect(() => {
+    if (members === 'Committee Members') {
+      setCommitteeMembers(loadCommitteeMembers)
+    }
+  }, [members]);
+  console.log(members, committeeMembers);
 
-      work: "Marketing Head",
-    },
-    {
-      id: 2,
-      img: member,
-      name: "Harly Rayan",
-      work: "Marketing Head",
-    },
-    {
-      id: 3,
-      img: member,
-      work: "Marketing Head",
-      name: "Kathryn Murphy",
-    },
-    {
-      id: 4,
-      img: member,
-
-      work: "Marketing Head",
-      name: "Kathryn Murphy",
-    },
-    {
-      id: 5,
-      img: member,
-      work: "Marketing Head",
-      name: "Kathryn Murphy",
-    },
-    {
-      id: 6,
-      img: member,
-      name: "Kathryn Murphy",
-      work: "Marketing Head",
-    },
-
-  ];
 
   return (
-    <div className=" pb-10 font-['Poppins'] " id="team">
+    <div className=" pb-10 " id="team">
       <div className="container mx-auto">
         <div>
           <SectionTitle pathname={(link.pathname)} title={members} />
@@ -66,7 +36,7 @@ const Members = () => {
         {
           members == "Founder" ? <>
 
-            <div className="py-10 px-5 text-black">
+            <div className="pb-10 px-5 text-black">
               <div className="flex bg-[#DEDEDE] p-3 flex-col items-center  relative rounded-xl shadow-lg">
                 <div className="relative">
                   <img src={member} alt="" className="w-80 h-64 rounded-2xl" />
@@ -106,34 +76,22 @@ const Members = () => {
                 }}
                 loop={true}
                 autoplay={{ delay: 3000 }}
-
-
-                breakpoints={{
-                  768: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                  },
-                  1024: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                  },
-                }}
                 className="mySwiper"
               >
 
-                {cards.map((card, i) => (
+                {committeeMembers.map((member, i) => (
                   <SwiperSlide keykey={i}>
 
                     <div className="flex p-3 flex-col items-center  relative rounded-xl  text-base-content">
-                      <div className=" rounded-2xl flex flex-col justify-center items-center custom-shadow">
+                      <div className=" rounded-2xl flex flex-col justify-center items-center custom-shadow px-5 py-8 md:min-w-[300px]">
                         <div className="relative">
-                          <img src={card.img} alt="" className="w-80 h-64 rounded-[75%]" />
+                          <img src={member.image} alt="" className="w-40 h-40 rounded-[75%] border-gray-500 border" />
 
                         </div>
-                        <p className="text-2xl font-semibold  py-2">
-                          {card.name}
+                        <p className="md:text-2xl text-xl font-semibold  py-2">
+                          {member.name}
                         </p>
-                        <p>{card.work}</p>
+                        <p>{member.designation}</p>
                         <div className="flex flex-row gap-5 p-3 text-xl">
                           <a href="https://google.com"><FaFacebook /></a>
                           <a href="https://google.com">
@@ -148,18 +106,33 @@ const Members = () => {
                           </a>
 
                         </div>
+                        <button onClick={() => { 
+                          document.getElementById('my_modal_4').showModal() 
+                          setCommitteeMember(member)
+                          }} className="btn bg-[#37a033] hover:bg-[#73da6f] mt-2 ">Details</button>
                       </div>
                     </div>
                   </SwiperSlide>
 
                 ))}
-            <SwiperNavButtons/>
+                <SwiperNavButtons />
               </Swiper>
 
               {/* navigation button */}
             </div>
           </>
         }
+
+
+        <dialog id="my_modal_4" className="modal">
+          <div className="modal-box">
+            <h3 className="font-bold text-lg">{committeeMember.name}</h3>
+            <p className="py-4"> {committeeMember.details}</p>
+          </div>
+          <form method="dialog" className="modal-backdrop">
+            <button>close</button>
+          </form>
+        </dialog>
       </div>
     </div>
   );
