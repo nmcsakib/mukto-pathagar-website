@@ -1,7 +1,6 @@
 
 // react icons
 import { CiMenuFries } from "react-icons/ci";
-import { BsArrowRight } from "react-icons/bs";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import { useNavigate } from "react-router-dom";
 import logo from '../assets/logo.jpeg'
@@ -23,10 +22,10 @@ const ResponsiveNavbar = () => {
     <li className="relative group cursor-pointer transition-all duration-500 capitalize hover:text-[#3B9DF8] flex items-center gap-[3px]">
       <Button btnName={label} arrow={true} />
       <article className="absolute top-[40px] -left-2 z-[-1] group-hover:z-30 translate-y-[-20px] group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 p-6 bg-stone-300 rounded-md boxShadow">
-        <ul className="flex flex-col gap-[7px] text-[#424242]">
+        <ul className="flex flex-col text-[#424242]">
           {items.map(({ label, path }) => (
-            <li key={label} onClick={() => handleNavigation(path)} className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
-              <BsArrowRight className="text-[#424242] text-[0.9rem]" /> {label}
+            <li key={label} onClick={() => handleNavigation(path)} className="flex items-center hover:text-black hover:bg-white p-2 rounded-xl transition-all duration-300">
+              {label}
             </li>
           ))}
         </ul>
@@ -109,12 +108,13 @@ const ResponsiveNavbar = () => {
 
         {/* Navbar */}
         <nav className="flex items-center justify-between w-full relative h-auto">
-          <div>
-            <img onClick={() => handleNavigation('/')} className="cursor-pointer w-14 rounded-full" src={logo} alt="" />
+          <div className="flex-1">
+            <h2 onClick={() => handleNavigation('/')} className="cursor-pointer font-semibold md:text-2xl md:block hidden">Mukto Pathagar</h2>
+                        <img onClick={() => handleNavigation('/')} className="cursor-pointer w-14 rounded-full md:hidden" src={logo} alt="" />
           </div>
 
           {/* nav links */}
-          <ul className="items-center gap-[20px] text-[1rem] text-[#424242] md:flex hidden">
+          <ul className="justify-center items-center gap-[20px] text-[1rem] text-[#424242] lg:flex hidden mr-5">
 
             <li className="transition-all duration-500 cursor-pointer hover:text-[#3B9DF8] capitalize">
               <a onClick={() => handleNavigation('/about')}>
@@ -157,9 +157,8 @@ const ResponsiveNavbar = () => {
               <a href="#contact"><Button arrow={false} btnName={"Contact"} /></a>
             </li>
           </ul>
-
-
-          <div className="flex flex-end items-center gap-[10px]">
+         
+           <div className="flex items-center gap-[10px]">
 
             <LangToggle />
             <div className="drawer-content flex gap-4 items-center justify-center">
@@ -170,6 +169,8 @@ const ResponsiveNavbar = () => {
               </label>
             </div>
           </div>
+
+
 
           {/* mobile sidebar */}
 

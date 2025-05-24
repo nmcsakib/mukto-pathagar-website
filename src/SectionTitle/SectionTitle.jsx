@@ -20,7 +20,7 @@ const navigate = useNavigate();
           </>
         }
         <h2
-          className="text-3xl md:text-4xl  font-bold" >
+          className="text-3xl md:text-4xl  font-bold text-lime-500" >
           {title}
         </h2>
        

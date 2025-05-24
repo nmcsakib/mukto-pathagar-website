@@ -21,13 +21,13 @@ const ResponsiveFooter = ({text}) => {
     }
   };
     return (
-        <footer className="bg-stone-900 shadow-md md:rounded-xl rounded-t-xl w-full p-6 sm:p-9 mt-5">
+        <footer className="bg-lime-900  shadow-md md:rounded-xl rounded-t-xl w-full p-6 sm:p-9 mt-5">
             <div
                 className="flex justify-around flex-col md:flex-row gap-16 md:gap-0 items-center">
                 <div className="">
                     <img src={logo} alt="logo"
                          className="w-[50px] mb-[20px] rounded-full"/>
-                    <div className="flex flex-col gap-[20px] text-[#fc8787f3]">
+                    <div className="flex flex-col gap-[20px] text-white">
                                             <span><a href="https://maps.app.goo.gl/xq3SwtFRZ7D17e3r6" target="_blank"
                                                 className="text-[0.9rem] flex items-center gap-[8px] cursor-pointer hover:text-blue-400">
                                                 <IoLocationOutline className="text-[1.2rem] "/>
@@ -44,7 +44,7 @@ const ResponsiveFooter = ({text}) => {
                                                 +8801301437873
                                             </a></span>
                     </div>
-                    <div className="flex flex-row gap-5 py-3 text-lg text-[#fc8787f3] ">
+                    <div className="flex flex-row gap-5 py-3 text-lg text-white ">
                      <a className="hover:text-blue-400" href="https://google.com">
                      <FaFacebook /></a>
                       <a className="hover:text-blue-400" href="https://google.com">
@@ -65,7 +65,7 @@ const ResponsiveFooter = ({text}) => {
                     <div className="flex gap-[2px] w-full  flex-col text-[#eeeeee] relative">
                         <label className="text-[0.9rem]">Your Email</label>
                         <input type="email"
-                               className="py-3 px-4 pr-[90px] w-full rounded-md border border-[#fc8787f3]  outline-none"
+                               className="py-3 px-4 pr-[90px] w-full rounded-md border border-gray-400  outline-none"
                                placeholder="Email address"/>
                     </div>
                           <div className="w-full pt-2">

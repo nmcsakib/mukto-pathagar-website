@@ -1,4 +1,3 @@
-import React from 'react';
 import team from '../assets/team.webp';
 import team2 from '../assets/team2.webp';
 

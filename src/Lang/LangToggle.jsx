@@ -15,7 +15,7 @@ const LangToggle = () => {
     <button
       onClick={toggleLang}
       aria-label="Toggle Dark Mode"
-      className="btn rounded-full bg-stone-400 text-white hover:btn-outline hover:bg-transparent hover:text-stone-600 flex-end"
+      className="flex justify-around items-center  text-base-content border-none bg-transparent hover:text-stone-600 mr-3 gap-3 cursor-pointer"
     ><FaGlobe />
       {lang === true ? <div><p>বাংলা</p></div> : <div><p>ENG</p></div>}
     </button>

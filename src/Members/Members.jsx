@@ -2,10 +2,12 @@ import SectionTitle from "../SectionTitle/SectionTitle";
 import { useLocation, useParams } from "react-router-dom";
 import member from '../assets/member.png';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import { FaFacebook, FaInstagram, FaLinkedin, } from "react-icons/fa";
-import "swiper/css";
+import 'swiper/css';
+import 'swiper/css/navigation';
 import { FaXTwitter } from "react-icons/fa6";
+import { SwiperNavButtons } from "../components/SwiperNavButtons";
 
 const Members = () => {
 
@@ -55,7 +57,7 @@ const Members = () => {
   ];
 
   return (
-    <div className=" py-10 font-['Poppins'] " id="team">
+    <div className=" pb-10 font-['Poppins'] " id="team">
       <div className="container mx-auto">
         <div>
           <SectionTitle pathname={(link.pathname)} title={members} />
@@ -97,18 +99,22 @@ const Members = () => {
               <Swiper
                 slidesPerView={1}
                 spaceBetween={10}
+                modules={[Autoplay, Navigation]}
+                navigation={{
+                  nextEl: '.swiper-button-next',
+                  prevEl: '.swiper-button-prev',
+                }}
                 loop={true}
-                modules={[Autoplay, Pagination]}
                 autoplay={{ delay: 3000 }}
 
 
                 breakpoints={{
                   768: {
-                    slidesPerView: 2,
+                    slidesPerView: 1,
                     spaceBetween: 20,
                   },
                   1024: {
-                    slidesPerView: 3,
+                    slidesPerView: 1,
                     spaceBetween: 20,
                   },
                 }}
@@ -118,33 +124,39 @@ const Members = () => {
                 {cards.map((card, i) => (
                   <SwiperSlide keykey={i}>
 
-                    <div className="flex bg-[#DEDEDE] p-3 flex-col items-center  relative rounded-xl shadow-lg">
-                      <div className="relative">
-                        <img src={card.img} alt="" className="w-80 h-64 rounded-2xl" />
+                    <div className="flex p-3 flex-col items-center  relative rounded-xl  text-base-content">
+                      <div className=" rounded-2xl flex flex-col justify-center items-center custom-shadow">
+                        <div className="relative">
+                          <img src={card.img} alt="" className="w-80 h-64 rounded-[75%]" />
 
-                      </div>
-                      <p className="text-2xl text-black  font-semibold  py-2">
-                        {card.name}
-                      </p>
-                      <p>{card.work}</p>
-                      <div className="flex flex-row gap-5 p-3 text-xl">
-                        <a href="https://google.com"><FaFacebook className="" /></a>
-                        <a href="https://google.com">
-                          <FaXTwitter />
+                        </div>
+                        <p className="text-2xl font-semibold  py-2">
+                          {card.name}
+                        </p>
+                        <p>{card.work}</p>
+                        <div className="flex flex-row gap-5 p-3 text-xl">
+                          <a href="https://google.com"><FaFacebook /></a>
+                          <a href="https://google.com">
+                            <FaXTwitter />
 
-                        </a>
-                        <a href="https://google.com">
-                          <FaInstagram />
-                        </a>
-                        <a href="https://google.com">
-                          <FaLinkedin />
-                        </a>
+                          </a>
+                          <a href="https://google.com">
+                            <FaInstagram />
+                          </a>
+                          <a href="https://google.com">
+                            <FaLinkedin />
+                          </a>
 
+                        </div>
                       </div>
                     </div>
                   </SwiperSlide>
+
                 ))}
+            <SwiperNavButtons/>
               </Swiper>
+
+              {/* navigation button */}
             </div>
           </>
         }

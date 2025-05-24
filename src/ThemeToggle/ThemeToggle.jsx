@@ -3,7 +3,7 @@ import React from 'react';
 const ThemeToggle = () => {
   return (
     <div>
-      <label className="swap swap-rotate">
+      <label className="swap swap-rotate  text-base-content">
   {/* this hidden checkbox controls the state */}
   <input type="checkbox" className="theme-controller" value="dark" />
 
