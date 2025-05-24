@@ -17,14 +17,11 @@ const Members = () => {
   const [committeeMembers, setCommitteeMembers] = useState([]);
   const [committeeMember, setCommitteeMember] = useState([]);
   const link = useLocation();
-  console.log(loadCommitteeMembers);
   useEffect(() => {
-    if (members === 'Committee Members') {
+    if (members) {
       setCommitteeMembers(loadCommitteeMembers)
     }
   }, [members]);
-  console.log(members, committeeMembers);
-
 
   return (
     <div className=" pb-10 " id="team">

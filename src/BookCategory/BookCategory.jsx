@@ -15,7 +15,6 @@ const BookCategory = ({ categoryName }) => {
     }
   }, [categoryName])
 
-  console.log(categoryName);
   const navigate = useNavigate();
   const link = useLocation();
   const handleNavigation = (path) => {

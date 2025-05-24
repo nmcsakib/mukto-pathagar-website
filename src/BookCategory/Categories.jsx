@@ -18,7 +18,6 @@ const Categories = () => {
             setFilteredBooks(filteredWri)
         }
     },[categories, category])
-    console.log(categories);
     return (
           <div className='container mx-auto px-8 h-screen'>
 

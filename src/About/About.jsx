@@ -6,7 +6,6 @@ import { useTranslation } from 'react-i18next';
 const About = () => {
    
   const link = useLocation();
-   console.log(link);
 
   const { t } = useTranslation();
   const { content1, content2 } = t('aboutContent');

@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 
 const SidebarSection = ({ title, items }) => {
-    console.log(title, items);
     const navigate = useNavigate();
 const handleNavigation = (path) => {
 

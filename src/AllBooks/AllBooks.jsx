@@ -14,7 +14,6 @@ const AllBooks = () => {
   const { books } = useParams();
   const link = useLocation();
 
-  console.log(booksDB);
 
   if (books == "All-Books") {
     return (
