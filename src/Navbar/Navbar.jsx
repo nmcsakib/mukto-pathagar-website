@@ -2,7 +2,7 @@
 // react icons
 import { CiMenuFries } from "react-icons/ci";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo from '../assets/logo.jpeg'
 import LangToggle from "../Lang/LangToggle";
 import Button from "./Button";
@@ -24,9 +24,9 @@ const ResponsiveNavbar = () => {
       <article className="absolute top-[40px] -left-2 z-[-1] group-hover:z-30 translate-y-[-20px] group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 p-6 bg-stone-300 rounded-md boxShadow">
         <ul className="flex flex-col text-[#424242]">
           {items.map(({ label, path }) => (
-            <li key={label} onClick={() => handleNavigation(path)} className="flex items-center hover:text-black hover:bg-white p-2 rounded-xl transition-all duration-300">
+            <NavLink key={label} to={path} className="flex items-center hover:text-black hover:bg-white hover:border-b-2 hover:border-b-gray-500 p-2 rounded-xl transition-all duration-300">
               {label}
-            </li>
+            </NavLink>
           ))}
         </ul>
       </article>
@@ -117,9 +117,9 @@ const ResponsiveNavbar = () => {
           <ul className="justify-center items-center gap-[20px] text-[1rem] text-[#424242] lg:flex hidden mr-5">
 
             <li className="transition-all duration-500 cursor-pointer hover:text-[#3B9DF8] capitalize">
-              <a onClick={() => handleNavigation('/about')}>
+              <NavLink to={'/about'}>
                 <Button arrow={false} btnName={"About Us"} />
-              </a>
+              </NavLink>
             </li>
 
             <DropdownMenu
@@ -169,11 +169,6 @@ const ResponsiveNavbar = () => {
               </label>
             </div>
           </div>
-
-
-
-          {/* mobile sidebar */}
-
         </nav>
       </div>
     </section>

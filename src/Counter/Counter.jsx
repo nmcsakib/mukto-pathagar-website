@@ -17,7 +17,7 @@ const Counter = () => {
               </span>
             </h2>
             <p className="text-lg tracking-wider">Members.</p>
-            <button onClick={() => navigate('/members/General Members')} className="btn btn-outline">See All Members.</button>
+            <button onClick={() => navigate('/members/Committee Members')} className="btn btn-outline">See All Members.</button>
           </div>
           <div className="flex flex-col gap-2 md:gap-5 justify-center items-center pt-8 md:pt-0">
             <h2 className="text-5xl flex items-center gap-5 md:text-7xl font-bold">

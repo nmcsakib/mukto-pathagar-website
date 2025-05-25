@@ -84,3 +84,8 @@ html {
 .slider-container:hover .marqueeSliderRight {
     animation-play-state: paused;
 }
+
+a.active{
+  border-bottom: 2px solid gray;
+  background-color: white;
+}

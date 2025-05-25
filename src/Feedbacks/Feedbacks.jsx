@@ -67,13 +67,6 @@ const Feedbacks = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        {/* <div className='text-center mt-10'>
-          <Link to='/allTestimonials'>
-            <button className='flexcode-button px-8 py-3'>
-              All Testimonials
-            </button>
-          </Link>
-        </div> */}
       </div>
     </section>
   );

@@ -10,18 +10,22 @@ import { FaXTwitter } from "react-icons/fa6";
 import { SwiperNavButtons } from "../components/SwiperNavButtons";
 import { useEffect, useState } from "react";
 import loadCommitteeMembers from '../Database/committee.json'
+import loadAdvisiorMembers from '../Database/advisior.json'
 
 const Members = () => {
 
   const { members } = useParams();
-  const [committeeMembers, setCommitteeMembers] = useState([]);
-  const [committeeMember, setCommitteeMember] = useState([]);
+  const [membersData, setMembersData] = useState([]);
+  const [MemberData, setMemberData] = useState([]);
   const link = useLocation();
   useEffect(() => {
-    if (members) {
-      setCommitteeMembers(loadCommitteeMembers)
+    if (members == "Committee Members") {
+      setMembersData(loadCommitteeMembers)
+    } else if(members == "Advisior Members"){
+      setMembersData(loadAdvisiorMembers)
     }
   }, [members]);
+  console.log(membersData, members);
 
   return (
     <div className=" pb-10 " id="team">
@@ -76,7 +80,7 @@ const Members = () => {
                 className="mySwiper"
               >
 
-                {committeeMembers.map((member, i) => (
+                {membersData.map((member, i) => (
                   <SwiperSlide keykey={i}>
 
                     <div className="flex p-3 flex-col items-center  relative rounded-xl  text-base-content">
@@ -88,7 +92,7 @@ const Members = () => {
                         <p className="md:text-2xl text-xl font-semibold  py-2">
                           {member.name}
                         </p>
-                        <p>{member.designation}</p>
+                        <p className="w-2/3 text-center">{member.designation}</p>
                         <div className="flex flex-row gap-5 p-3 text-xl">
                           <a href="https://google.com"><FaFacebook /></a>
                           <a href="https://google.com">
@@ -105,7 +109,7 @@ const Members = () => {
                         </div>
                         <button onClick={() => { 
                           document.getElementById('my_modal_4').showModal() 
-                          setCommitteeMember(member)
+                          setMemberData(member)
                           }} className="btn bg-[#37a033] hover:bg-[#73da6f] mt-2 ">Details</button>
                       </div>
                     </div>
@@ -123,8 +127,8 @@ const Members = () => {
 
         <dialog id="my_modal_4" className="modal">
           <div className="modal-box">
-            <h3 className="font-bold text-lg">{committeeMember.name}</h3>
-            <p className="py-4"> {committeeMember.details}</p>
+            <h3 className="font-bold text-lg">{MemberData.name}</h3>
+            <p className="py-4">Contact Number: {MemberData.mobile}</p>
           </div>
           <form method="dialog" className="modal-backdrop">
             <button>close</button>
