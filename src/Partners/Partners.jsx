@@ -1,12 +1,12 @@
 import React from "react";
 
 // marquee data
-import { MarqueeData } from "../Database/partners";
 import SectionTitle from "../SectionTitle/SectionTitle";
+import { partnersData } from "../contents/content";
 
 const Partners = () => {
 
-    const doubledComponents = MarqueeData ? [...MarqueeData, ...MarqueeData] : [];
+    const doubledComponents = partnersData ? [...partnersData, ...partnersData] : [];
 
     return (
         <div className="container mx-auto px-8 my-20">
@@ -17,14 +17,9 @@ const Partners = () => {
 
                 <div className="marqueeSliderLeft flex items-center gap-5 mb-5">
                     {
-                        doubledComponents.map((item, index) => (
-                            <a
-                                href={item.url}
-                                className="py-2 px-6 bg-[#0FABCA] capitalize border border-[#0FABCA] text-white rounded font-medium whitespace-nowrap"
-                                key={index}
-                            >
-                                {item.title}
-                            </a>
+                        doubledComponents.map((item, index) => (<>
+                            <img className="w-20" key={index} src={item.image} alt="" />
+                            </>
                         ))
                     }
                 </div>
@@ -35,14 +30,7 @@ const Partners = () => {
             >
                 <div className="marqueeSliderRight flex items-center gap-5 w-[50%] 1404px:w-[100%] justify-center">
                     {
-                        MarqueeData?.map((item, index) => (
-                            <a
-                                href={item.url}
-                                className="py-2 px-6 bg-[#0FABCA] capitalize border border-[#0FABCA] text-white rounded font-medium whitespace-nowrap"
-                                key={index}
-                            >
-                                {item.title}
-                            </a>
+                        partnersData?.map((item, index) => (<img key={index} className="w-20" src={item.image} alt="" />
                         ))
                     }
 

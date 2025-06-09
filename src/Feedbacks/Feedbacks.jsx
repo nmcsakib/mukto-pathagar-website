@@ -4,10 +4,10 @@ import { FaUser } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import feedbacks from '../Database/Feedbacks.json'
 import SectionTitle from "../SectionTitle/SectionTitle";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
+import { testimonialData } from "../contents/content";
 
 
 const Feedbacks = () => {
@@ -39,7 +39,7 @@ const Feedbacks = () => {
           }}
           className="mySwiper"
         >
-          {feedbacks?.map((feedback) => (
+          {testimonialData?.map((feedback) => (
             <SwiperSlide key={feedback._id}>
               <div className="flexcode-banner-bg p-5 md:p-5 mb-9 rounded-2xl  border border-slate-500 hover:border-[#fc8787f3] transition-all duration-300 cursor-pointer">
                 <h2 className="text-xl font-semibold mb-5 line-clamp-1">

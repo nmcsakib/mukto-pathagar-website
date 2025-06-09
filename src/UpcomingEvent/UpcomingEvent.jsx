@@ -1,11 +1,6 @@
-
-import React from "react";
 import { BiMicrophone } from "react-icons/bi";
-
-// react icons
-import {BsSend} from "react-icons/bs";
-import { FcOrganization } from "react-icons/fc";
 import {IoLocationOutline} from "react-icons/io5";
+import { UpcomingEventData } from "../contents/content";
 
 const UpcomingEvent = () => {
 
@@ -22,16 +17,16 @@ const UpcomingEvent = () => {
                     <BiMicrophone
                         className="p-[8px] md:p-[10px] rounded-xl bg-green-100 text-green-800 text-[2rem] md:text-[3rem]"/>
                     <div>
-                        <h4 className="text-[0.8rem] md:text-[1.1rem] font-[600] text-gray-800">Lekhok Adda</h4>
-                        <p className="text-[0.6rem] md:text-[0.9rem] font-[400] text-gray-500">15-Dec-2020</p>
+                        <h4 className="text-[0.8rem] md:text-[1.1rem] font-[600] text-gray-800">{UpcomingEventData?.title}</h4>
+                        <p className="text-[0.6rem] md:text-[0.9rem] font-[400] text-gray-500">Guest: {UpcomingEventData?.guest}</p>
                     </div>
                 </div>
                 <div className="flex items-center gap-[10px]">
                     <IoLocationOutline
                         className="p-[8px] md:p-[10px] rounded-xl bg-green-100 text-green-800 text-[2rem] md:text-[3rem]"/>
                     <div>
-                        <h4 className="text-[0.8rem] md:text-[1.1rem] font-[600] text-gray-800">Mukto Pathagar, Kazirhaat</h4>
-                        <p className="text-[0.6rem] md:text-[0.9rem] font-[400] text-gray-500">15-June-2025</p>
+                        <h4 className="text-[0.8rem] md:text-[1.1rem] font-[600] text-gray-800">{UpcomingEventData?.location}</h4>
+                        <p className="text-[0.6rem] md:text-[0.9rem] font-[400] text-gray-500">{UpcomingEventData?.date}</p>
                     </div>
                 </div>
             </div>
@@ -44,8 +39,7 @@ const UpcomingEvent = () => {
                 <div
                     className="w-[45px] h-[45px] rounded-full bg-white absolute top-[-15%] md:top-[-13%] 425px:left-[-13.5%] left-[-19%] md:left-[-11.5%]"></div>
 
-                <h4 className="text-[0.9rem] md:text-[1.3rem] font-bold text-green-800">4:00
-                    PM</h4>
+                <h4 className="text-[0.9rem] md:text-[1.3rem] font-bold text-green-800">{UpcomingEventData?.time}</h4>
 
                 <button
     className="relative inline-flex items-center px-3 md:px-8 py-1 md:py-2.5 overflow-hidden text-lg font-medium text-base-content rounded-lg bg-[#33a037] hover:text-black group hover:bg-[#33a037] cursor-pointer">
@@ -60,7 +54,7 @@ const UpcomingEvent = () => {
 </button>
 
                 <p className="text-[0.9rem] md:text-[1.1rem] text-gray-500">Price: <span
-                    className="text-red-600 font-semibold">Free</span></p>
+                    className="text-red-600 font-semibold">{UpcomingEventData?.price}</span></p>
 
                 {/* bottom carve */}
                 <div
