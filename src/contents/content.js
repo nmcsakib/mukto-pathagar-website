@@ -1,6 +1,6 @@
 // Our Activities
 
-const activitiesContent = [ "first", "second", "third", 'forth', 'fifth']
+const activitiesContent = [ "Books", "Society", "Climate", 'Studens', 'Womens']
 
 // Our Activities
 
@@ -61,39 +61,93 @@ const partnersData = [
   
     {
         title: "OTP Input",
-        image: "https://i.ibb.co.com/QMrkz9s/otp-input.png",
+        image: "https://i.ibb.co/3Yf8R2Fg/download.png",
         url: "/components/otp-input",
         groupName: "input",
     },
     {
-        title: "file upload",
-        image: "https://i.ibb.co/gmTJPyf/Name-23.png",
-        url: "/components/input-file",
+        title: "OTP Input",
+        image: "https://i.ibb.co/3Yf8R2Fg/download.png",
+        url: "/components/otp-input",
         groupName: "input",
     },
     {
-        title: "primary button",
-        image: "https://i.ibb.co/6R0WRr5/Name-4.png",
-        url: "/components/normal-button",
-        groupName: "button",
+        title: "OTP Input",
+        image: "https://i.ibb.co/3Yf8R2Fg/download.png",
+        url: "/components/otp-input",
+        groupName: "input",
     },
     {
-        title: "Auth Button",
-        image: "https://i.ibb.co/6R0WRr5/Name-4.png",
-        url: "/components/auth-buttons",
-        groupName: "button",
+        title: "OTP Input",
+        image: "https://i.ibb.co/3Yf8R2Fg/download.png",
+        url: "/components/otp-input",
+        groupName: "input",
     },
     {
-        title: "Dropdown Button",
-        image: "https://i.ibb.co.com/NZnR5JS/dropdown-button.png",
-        url: "/components/dropdown-button",
-        groupName: "button",
+        title: "OTP Input",
+        image: "https://i.ibb.co/3Yf8R2Fg/download.png",
+        url: "/components/otp-input",
+        groupName: "input",
     },
     {
-        title: "animated button",
-        image: "https://i.ibb.co/6R0WRr5/Name-4.png",
-        url: "/components/animated-button",
-        groupName: "button",
+        title: "OTP Input",
+        image: "https://i.ibb.co/3Yf8R2Fg/download.png",
+        url: "/components/otp-input",
+        groupName: "input",
+    },
+    {
+        title: "OTP Input",
+        image: "https://i.ibb.co/3Yf8R2Fg/download.png",
+        url: "/components/otp-input",
+        groupName: "input",
+    },
+    {
+        title: "OTP Input",
+        image: "https://i.ibb.co/3Yf8R2Fg/download.png",
+        url: "/components/otp-input",
+        groupName: "input",
+    },
+    {
+        title: "OTP Input",
+        image: "https://i.ibb.co/3Yf8R2Fg/download.png",
+        url: "/components/otp-input",
+        groupName: "input",
+    },
+    {
+        title: "OTP Input",
+        image: "https://i.ibb.co/3Yf8R2Fg/download.png",
+        url: "/components/otp-input",
+        groupName: "input",
+    },
+    {
+        title: "OTP Input",
+        image: "https://i.ibb.co/3Yf8R2Fg/download.png",
+        url: "/components/otp-input",
+        groupName: "input",
+    },
+    {
+        title: "OTP Input",
+        image: "https://i.ibb.co/3Yf8R2Fg/download.png",
+        url: "/components/otp-input",
+        groupName: "input",
+    },
+    {
+        title: "OTP Input",
+        image: "https://i.ibb.co/3Yf8R2Fg/download.png",
+        url: "/components/otp-input",
+        groupName: "input",
+    },
+    {
+        title: "OTP Input",
+        image: "https://i.ibb.co/3Yf8R2Fg/download.png",
+        url: "/components/otp-input",
+        groupName: "input",
+    },
+    {
+        title: "OTP Input",
+        image: "https://i.ibb.co/3Yf8R2Fg/download.png",
+        url: "/components/otp-input",
+        groupName: "input",
     },
 
 ]
@@ -151,6 +205,46 @@ const testimonialData = [
 
 // Testimonial
 
+
+// Events ( ! Do not add more than 3 pictures)
+
+const eventsData = [
+    {
+        id: 1,
+        title: 'With Abu naser Tipu',
+        description: '“জীবনের সকল স্তরের প্রাতিষ্ঠানিক শিক্ষা সাধারণত ৩০ থেকে ৩৫ বছরের মধ্যেই সম্পন্ন করা উচিত। এই সময়ের পর পড়ালেখার চাপ বহন করা সহজ হয় না।” — বিদেশে উচ্চশিক্ষা বিষয়ক সেমিনারে এমন বাস্তবধর্মী পরামর্শ দেন মোঃ আবু নাছের টিপু, উপসচিব, তথ্য ও যোগাযোগ প্রযুক্তি বিভাগ। পাঠক ও লেখকের মধ্যে সম্পর্কের সেতুবন্ধন গড়ে তোলার লক্ষ্যে আয়োজিত ধারাবাহিক আয়োজন ‘লেখকের গল্প, গল্পের লেখক’-এর ৪র্থ পর্বে উপস্থিত ছিলেন লেখক মোঃ আবু নাছের টিপু। এই আয়োজনে তিনি বিদেশে উচ্চশিক্ষা, জনপ্রশাসনের প্রতিশ্রুতি ও পারফরম্যান্স, এবং প্রশাসনের সঙ্গে জনগণের পারস্পরিক আস্থার গুরুত্ব নিয়ে আলোচনা করেন। অনুষ্ঠানে আরও বক্তব্য প্রদান করেন লেখক ও সংগঠক গিয়াস উদ্দিন পিয়াস, লেখক ও ব্যাংকার কামরুজ্জামান মোহন, সুলতান মাহমুদ ডিগ্রি কলেজের সহকারী অধ্যাপক মোঃ মমিন উল্যাহ এবং লেখক ও রাষ্ট্রচিন্তক আসাদ পারভেজ। তাঁরা লেখালেখির তাৎপর্য, সমাজে লেখকের ভূমিকা এবং ব্যক্তিগত অভিজ্ঞতা তুলে ধরেন। অনুষ্ঠানের দ্বিতীয় পর্বে ২০২৪-২৫ শিক্ষাবর্ষে পাবলিক বিশ্ববিদ্যালয়ে ভর্তি পরীক্ষায় উত্তীর্ণ শিক্ষার্থীদের সম্মাননা স্মারক প্রদান করা হয়। এরপর মনোজ্ঞ সাংস্কৃতিক পরিবেশনার মাধ্যমে আয়োজনের সমাপ্তি ঘোষণা করা হয়।',
+        date: '8 June 2025',
+        pictures: ['https://i.ibb.co/gLYLCQfw/image.jpg', 'https://i.ibb.co/gLYLCQfw/image.jpg', 'https://i.ibb.co/gLYLCQfw/image.jpg']
+    },
+    {
+        id: 2,
+        title: 'With Abu naser Tipu',
+        description: '“জীবনের সকল স্তরের প্রাতিষ্ঠানিক শিক্ষা সাধারণত ৩০ থেকে ৩৫ বছরের মধ্যেই সম্পন্ন করা উচিত। এই সময়ের পর পড়ালেখার চাপ বহন করা সহজ হয় না।” — বিদেশে উচ্চশিক্ষা বিষয়ক সেমিনারে এমন বাস্তবধর্মী পরামর্শ দেন মোঃ আবু নাছের টিপু, উপসচিব, তথ্য ও যোগাযোগ প্রযুক্তি বিভাগ। পাঠক ও লেখকের মধ্যে সম্পর্কের সেতুবন্ধন গড়ে তোলার লক্ষ্যে আয়োজিত ধারাবাহিক আয়োজন ‘লেখকের গল্প, গল্পের লেখক’-এর ৪র্থ পর্বে উপস্থিত ছিলেন লেখক মোঃ আবু নাছের টিপু। এই আয়োজনে তিনি বিদেশে উচ্চশিক্ষা, জনপ্রশাসনের প্রতিশ্রুতি ও পারফরম্যান্স, এবং প্রশাসনের সঙ্গে জনগণের পারস্পরিক আস্থার গুরুত্ব নিয়ে আলোচনা করেন। অনুষ্ঠানে আরও বক্তব্য প্রদান করেন লেখক ও সংগঠক গিয়াস উদ্দিন পিয়াস, লেখক ও ব্যাংকার কামরুজ্জামান মোহন, সুলতান মাহমুদ ডিগ্রি কলেজের সহকারী অধ্যাপক মোঃ মমিন উল্যাহ এবং লেখক ও রাষ্ট্রচিন্তক আসাদ পারভেজ। তাঁরা লেখালেখির তাৎপর্য, সমাজে লেখকের ভূমিকা এবং ব্যক্তিগত অভিজ্ঞতা তুলে ধরেন। অনুষ্ঠানের দ্বিতীয় পর্বে ২০২৪-২৫ শিক্ষাবর্ষে পাবলিক বিশ্ববিদ্যালয়ে ভর্তি পরীক্ষায় উত্তীর্ণ শিক্ষার্থীদের সম্মাননা স্মারক প্রদান করা হয়। এরপর মনোজ্ঞ সাংস্কৃতিক পরিবেশনার মাধ্যমে আয়োজনের সমাপ্তি ঘোষণা করা হয়।',
+        date: '8 June 2025',
+        pictures: ['https://i.ibb.co/gLYLCQfw/image.jpg', 'https://i.ibb.co/gLYLCQfw/image.jpg', 'https://i.ibb.co/gLYLCQfw/image.jpg']
+    }
+]
+
+// Events
+
+
+
+// Footer Content
+
+const footerData = {
+    address: ' Kazirhat, Begumgonj, Noakhali',
+    email: 'muktopathagar@gmail.com',
+    number: ' +8801301437873',
+    socialLink: {
+        facebook: 'https://www.facebook.com/mukta.pathagara',
+        instagram: 'https://www.facebook.com/mukta.pathagara',
+        linkedin: 'https://www.facebook.com/mukta.pathagara',
+        twitter: 'https://www.facebook.com/mukta.pathagara',
+    }
+}
+
+// Footer Content
+
 export {
     activitiesContent,
     homepageData,
@@ -158,5 +252,7 @@ export {
     UpcomingEventData,
     faqData,
     partnersData,
-    testimonialData
+    testimonialData,
+    eventsData,
+    footerData
 }

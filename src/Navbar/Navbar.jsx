@@ -146,9 +146,6 @@ const ResponsiveNavbar = () => {
             <DropdownMenu
               label="Events"
               items={[
-                { label: '2022 All Programs', path: '/events/2022' },
-                { label: '2023 All Programs', path: '/events/2023' },
-                { label: '2024 All Programs', path: '/events/2024' },
                 { label: '2025 All Programs', path: '/events/2025' },
               ]}
             />

@@ -7,6 +7,7 @@ import {IoLocationOutline} from "react-icons/io5";
 import {MdOutlineEmail, MdOutlineLocalPhone} from "react-icons/md";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { footerData } from "../contents/content";
 
 const ResponsiveFooter = ({text}) => {
       const [copied, setCopied] = useState(false);
@@ -31,30 +32,31 @@ const ResponsiveFooter = ({text}) => {
                                             <span><a href="https://maps.app.goo.gl/xq3SwtFRZ7D17e3r6" target="_blank"
                                                 className="text-[0.9rem] flex items-center gap-[8px] cursor-pointer hover:text-blue-400">
                                                 <IoLocationOutline className="text-[1.2rem] "/>
-                                                Kazirhat, Begumgonj, Noakhali
+                                               {footerData?.address}
                                             </a></span>
                         <span><a
                             className="text-[0.9rem] flex items-center gap-[8px] hover:text-blue-400 cursor-pointer">
                                                 <MdOutlineEmail className="text-[1.1rem]"/>
-                                                muktopathagar@gmail.com
+                                                {footerData?.email}
                                             </a></span>
                         <span><a
                             className="text-[0.9rem] flex items-center gap-[8px] hover:text-blue-400 cursor-pointer">
                                                 <MdOutlineLocalPhone className="text-[1.1rem]"/>
-                                                +8801301437873
+                                               {footerData?.number}
                                             </a></span>
                     </div>
                     <div className="flex flex-row gap-5 py-3 text-lg text-white ">
-                     <a className="hover:text-blue-400" href="https://google.com">
+                     <a className="hover:text-blue-400" target="_blank" href={footerData?.socialLink?.facebook}>
                      <FaFacebook /></a>
-                      <a className="hover:text-blue-400" href="https://google.com">
+                     
+                      <a className="hover:text-blue-400" target="_blank" href={footerData?.socialLink?.twitter}>
                       <FaXTwitter/>
                       
                       </a>
-                      <a className="hover:text-blue-400" href="https://google.com">
+                      <a className="hover:text-blue-400" target="_blank" href={footerData?.socialLink?.instagram}>
                       <FaInstagram/>
                       </a>
-                      <a className="hover:text-blue-400" href="https://google.com">
+                      <a className="hover:text-blue-400" target="_blank" href={footerData?.socialLink?.linkedin}>
                       <FaLinkedin/>
                       </a>
                 

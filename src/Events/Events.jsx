@@ -2,13 +2,15 @@ import SectionTitle from '../SectionTitle/SectionTitle';
 import EventImage1 from '../assets/banner-circle-image.png'
 import { useLocation, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { eventsData } from '../contents/content';
+import { useState } from 'react';
 
 const Events = () => {
 
   const { t } = useTranslation();
   const { year } = useParams();
-  const link = useLocation(); 
-  const nums = [1, 2, 3, 4, 5, 6, 7];
+  const link = useLocation();
+    const [full, setFull] = useState(false)
   return (
     <section className='container mx-auto px-8'>
       <SectionTitle pathname={link.pathname} title={t("Events")} descrition={`Events of ${year}`} />
@@ -17,8 +19,8 @@ const Events = () => {
         <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
 
           {
-            nums.map(num => {
-              if (num % 2 == 0) {
+            eventsData.map(event => {
+              if (event?.id % 2 === 0) {
                 return (
                   <li>
                     <hr />
@@ -38,8 +40,13 @@ const Events = () => {
                     </div>
                     <div className="timeline-end md:mb-10">
                       <time className="font-mono italic">{year}</time>
-                      <div className="text-lg font-black">iMac</div>
-                      মানব জীবনের প্রথম পর্যায় হলো শৈশব। আর শৈশবই হল মানব জীবনের অন্যতম অধ্যায়। প্রত্যক্ষ দৃষ্টিতে একটি শিশুকে নির্ভরশীল বলে মনে হলেও কিন্তু একটি দেশের ভবিষ্যৎ গড়ে ওঠে ওই দেশের শিশুদের উপর। তাই ইংরেজিতে একটি প্রবাদ বাক্য আছে “today’s child is tomorrow’s citizen” অর্থাৎ আজকের শিশু কালকের নাগরিক। কিন্তু দুর্ভাগ্যবশত প্রত্যেকটি শিশু প্রাথমিক সুযোগ সুবিধা, শিক্ষা ইত্যাদি পায় না। ওরা শিকার হয় বিভিন্ন অপব্যবহারের। আর তার মধ্যে অন্যতম একটি অপব্যবহার হল শিশুশ্রম।
+                     <div className="text-lg font-black">{event?.title}</div>
+                    <p dangerouslySetInnerHTML={{__html: full ? event?.description : event?.description.slice(0, 250) + '...'}} className='text-lg leading-relaxed inline'></p> <span className={`${full === true ? 'hidden' : 'font-bold inline cursor-pointer'}`} onClick={() => setFull(true)}>Read More</span>
+                      <div className="grid grid-cols-3 gap-10">
+                      {
+                        event?.pictures?.map(pic => <img className='' src={pic} alt="" />)
+                      }
+                      </div>
                     </div>
                     <hr />
                   </li>
@@ -61,16 +68,15 @@ const Events = () => {
                         />
                       </svg>
                     </div>
-                    <div className="timeline-start mb-10 md:text-end">
-                      <time className="font-mono italic">01 April {year}</time>
-                      <div className="text-lg font-black">First Macintosh computer</div>
-                      <p className="text-lg">
-                        মানব জীবনের প্রথম পর্যায় হলো শৈশব। আর শৈশবই হল মানব জীবনের অন্যতম অধ্যায়। প্রত্যক্ষ দৃষ্টিতে একটি শিশুকে নির্ভরশীল বলে মনে হলেও কিন্তু একটি দেশের ভবিষ্যৎ গড়ে ওঠে ওই দেশের শিশুদের উপর। তাই ইংরেজিতে একটি প্রবাদ বাক্য আছে “today’s child is tomorrow’s citizen” অর্থাৎ আজকের শিশু কালকের নাগরিক। কিন্তু দুর্ভাগ্যবশত প্রত্যেকটি শিশু প্রাথমিক সুযোগ সুবিধা, শিক্ষা ইত্যাদি পায় না। ওরা শিকার হয় বিভিন্ন অপব্যবহারের। আর তার মধ্যে অন্যতম একটি অপব্যবহার হল শিশুশ্রম।
-                      </p>
-                      <div className="grid grid-cols-3 gap-10">
-                        <img className='' src={EventImage1} alt="" />
-                        <img className='' src={EventImage1} alt="" />
-                        <img className='' src={EventImage1} alt="" />
+                     <div className="timeline-start mb-10 md:text-end">
+                      <time className="font-mono italic">{year}</time>
+                     <div className="text-lg font-black">{event?.title}</div>
+                    
+                      <p dangerouslySetInnerHTML={{__html: full ? event?.description : event?.description.slice(0, 250) + '...'}} className='text-lg leading-relaxed inline'></p> <span className={`${full === true ? 'hidden' : 'font-bold inline cursor-pointer'}`} onClick={() => setFull(true)}>Read More</span>
+                      <div className="grid grid-cols-3 gap-10 mt-5">
+                      {
+                        event?.pictures?.map(pic => <img className='' src={pic} alt="Event Photo" />)
+                      }
                       </div>
                     </div>
                     <hr />

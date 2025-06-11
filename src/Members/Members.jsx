@@ -1,6 +1,5 @@
 import SectionTitle from "../SectionTitle/SectionTitle";
 import { useLocation, useParams } from "react-router-dom";
-import member from '../assets/member.png';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import { FaFacebook, FaInstagram, FaLinkedin, } from "react-icons/fa";
@@ -40,15 +39,15 @@ const Members = () => {
             <div className="pb-10 px-5 text-black">
               <div className="flex bg-[#DEDEDE] p-3 flex-col items-center  relative rounded-xl shadow-lg">
                 <div className="relative">
-                  <img src={member} alt="" className="w-80 h-64 rounded-2xl" />
+                  <img src="https://i.ibb.co/Cpc1y0Xg/image.png" className="w-80 h-64 rounded-2xl" />
 
                 </div>
                 <p className="text-2xl  font-semibold  py-2">
-                  SAKIB
+                  AbdullahIbne Sazid Tahmid
                 </p>
                 <p>Founder</p>
                 <div className="flex flex-row gap-5 p-3 text-xl">
-                  <a className="hover:text-blue-400" href="https://google.com"><FaFacebook /></a>
+                  <a className="hover:text-blue-400" href="https://www.facebook.com/abdullahibne.Sazid"><FaFacebook /></a>
                   <a className="hover:text-blue-400" href="https://google.com">
                     <FaXTwitter />
 
