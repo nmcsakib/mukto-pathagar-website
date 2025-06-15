@@ -1,57 +1,76 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import { useLocation, useNavigate } from 'react-router-dom';
-import publicationDB from '../Database/PublicationsDB.json'
-import writersDB from '../Database/writersDB.json'
 
 const BookCategory = ({ categoryName }) => {
-  const [categories, setCategories] = useState([]);
+  const [allBooks, setAllBooks] = useState([]);
+
   useEffect(() => {
-    if (categoryName == "Publications") {
-      setCategories(publicationDB)
-    }
-    else if (categoryName == "Writers") {
-      setCategories(writersDB)
-    }
-  }, [categoryName])
+    fetch('https://mocki.io/v1/e46c5798-5df9-4b3a-95b2-efa940183474')
+      .then(res => res.json())
+      .then(data => setAllBooks(data));
+  }, []);
+
+  const result = useMemo(() => {
+    const counts = allBooks.reduce((acc, book) => {
+      let key;
+      if (categoryName === "Publications") {
+        key = book.publications;
+      } else if (categoryName === "Writers") {
+        key = book.writer;
+      } else {
+        key = "Others";
+      }
+
+      if (key) {
+        acc[key] = (acc[key] || 0) + 1;
+      }
+
+      return acc;
+    }, {});
+
+    return Object.entries(counts).map(([category, totalBook]) => ({
+      category,
+      totalBook
+    }));
+  }, [allBooks, categoryName]);
 
   const navigate = useNavigate();
   const link = useLocation();
-  const handleNavigation = (path) => {
 
+  const handleNavigation = (path) => {
     navigate(path);
   };
 
   return (
-    <div v className='container mx-auto px-8 h-screen'>
+    <div className='container mx-auto px-8  min-h-screen'>
       <SectionTitle pathname={link.pathname} title={categoryName} />
       <div className="overflow-x-auto">
         <table className="table table-zebra">
-          {/* head */}
           <thead>
             <tr>
               <th>No.</th>
               <th>{categoryName}</th>
-              <th>Books We have</th>
+              <th>Books We Have</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
-            {/* row 1 */}
-
-            {
-              categories.map((category, i) => <>
-
-                <tr>
-                  <th>{i + 1}</th>
-                  <td>{category.name}</td>
-                  <td>{category.totalBooks}</td>
-                  <td><button onClick={() => handleNavigation(`/Books/${categoryName}/${category.name}`)} className="btn btn-sm">See All Books</button></td>
-                </tr>
-              </>)
-
-            }
-
+            {result.map((category, i) => (
+              <tr key={i}>
+                <th>{i + 1}</th>
+                <td>{category.category}</td>
+                <td>{category.totalBook}</td>
+                <td>
+                  <button
+                    onClick={() => handleNavigation(`/Books/${categoryName}/${category.category}`)}
+                    className="btn btn-sm btn-success"
+                  >
+                    All Books
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

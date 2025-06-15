@@ -7,6 +7,7 @@ import logo from '../assets/logo.jpeg'
 import LangToggle from "../Lang/LangToggle";
 import Button from "./Button";
 import SidebarSection from "./SidebarSection";
+import { BiMenu } from "react-icons/bi";
 
 const ResponsiveNavbar = () => {
 
@@ -161,8 +162,8 @@ const ResponsiveNavbar = () => {
             <div className="drawer-content flex gap-4 items-center justify-center">
               {/* Page content here */}
               <ThemeToggle />
-              <label htmlFor="my-drawer" className="drawer-button lg:hidden btn rounded-full bg-stone-400 text-white hover:btn-outline hover:bg-transparent hover:text-stone-600 flex-end">
-                <CiMenuFries />
+              <label htmlFor="my-drawer" className="drawer-button lg:hidden btnflex-end">
+                <BiMenu className="text-2xl cursor-pointer" />
               </label>
             </div>
           </div>
