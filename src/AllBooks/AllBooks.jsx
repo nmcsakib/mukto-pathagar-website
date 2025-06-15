@@ -5,14 +5,23 @@ import BookCategory from '../BookCategory/BookCategory';
 import booksDB from '../Database/booksDB.json'
 import { useTranslation } from 'react-i18next';
 import Searchbar from '../components/SearchBar/SearchBar';
+import Book from './Book';
 
 
 const AllBooks = () => {
 
+  const [showBooks, setShowBooks] = useState([]);
+  useEffect(() => {
+fetch('https://mocki.io/v1/f0c4745e-da6d-48a9-a536-751904bd3497').then(res => res.json()).then(data =>{
+
+setShowBooks(data)
+  console.log(data)
+} )
+  }, [])
+
   const { t } = useTranslation();
 
-  const [selectedBook, setSelectedBook] = useState(null);
-  const [showBooks, setShowBooks] = useState([...booksDB].slice(0, 5));
+  // const [selectedBook, setSelectedBook] = useState(null);
   const [searchedBook, setSearchedBook] = useState('')
   const { books } = useParams();
   const link = useLocation();
@@ -20,18 +29,17 @@ const AllBooks = () => {
   console.log(showBooks);
 
   const handleSeeMore = () =>{
-    
-    setShowBooks([...booksDB])
+
+fetch('https://mocki.io/v1/f0c4745e-da6d-48a9-a536-751904bd3497').then(res => res.json()).then(data =>{
+
+  setShowBooks(data)
+} )
   }
 
   useEffect(() => {
-    setShowBooks([...booksDB])
-  },[])
-
-  useEffect(() => {
-    const searched = booksDB.filter(book => (book.BookName.toLowerCase()).includes(searchedBook.toLowerCase()))
+    const searched = booksDB.filter(book => (book.bookName.toLowerCase()).includes(searchedBook.toLowerCase()))
     console.log([searched, searched]);
-    searchedBook !== '' ? setShowBooks([...searched]) : setShowBooks([...booksDB].slice(0, 5))
+    searchedBook !== '' ? setShowBooks([...searched]) : setShowBooks([...booksDB].slice(0, 4))
   },[searchedBook])
 
 
@@ -42,58 +50,14 @@ const AllBooks = () => {
         <SectionTitle pathname={link.pathname} title={t("AllBooks")} />
         <div className="overflow-x-auto font-mono flex flex-col justify-center items-center gap-4">
           <Searchbar setSearchedBook={setSearchedBook}/>
-          <table className="table">
-            {/* head */}
-            <thead>
-              <tr>
-                <th>No.</th>
-                <th>Book</th>
-                <th>Writter</th>
-                <th>Publication</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {/* row 1 */}
-              {
-                showBooks.map((book, i) => <>
-                  <tr key={i}>
-                    <th>{i + 1}</th>
-                    <td>
-                      <div className="flex items-center gap-3">
+          <div className='grid grid-cols-4 gap-5'>
+            {
+                showBooks.map((book, i) => <div key={i}>
+                 <Book book={book}/>
 
-                        <div>
-                          <div className="font-bold">{book?.BookName}</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      {book?.Writer}
-                    </td>
-                    <td>{book?.Publication}</td>
-                    <th>
-                      <button onClick={() => {
-                        setSelectedBook(book?.BookName);
-                        document.getElementById('my_modal_2').showModal()
-                      }} className="btn btn-ghost btn-xs">details</button>
-                    </th>
-                  </tr>
-
-                  {/* Open the modal using document.getElementById('ID').showModal() method */}
-                  <dialog id="my_modal_2" className="modal">
-                    <div className="modal-box">
-                      <h3 className="font-bold text-lg">{selectedBook}</h3>
-                      <p className="py-4">Sorry! No details Available now.</p>
-                    </div>
-                    <form method="dialog" className="modal-backdrop">
-                      <button>close</button>
-                    </form>
-                  </dialog>
-
-                </>)
-              }
-            </tbody>
-          </table>
+                </div>)
+            }
+          </div>
           {searchedBook === '' && showBooks.length < 6 && <button onClick={handleSeeMore} className="btn btn-primary">See More</button>}
         </div>
       </div>

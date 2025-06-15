@@ -9,7 +9,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { SwiperNavButtons } from "../components/SwiperNavButtons";
 import { useEffect, useState } from "react";
 import loadCommitteeMembers from '../Database/committee.json'
-import loadAdvisiorMembers from '../Database/advisior.json'
+import loadAdvisorMembers from '../Database/advisor.json'
 
 const Members = () => {
 
@@ -21,7 +21,7 @@ const Members = () => {
     if (members == "Committee Members") {
       setMembersData(loadCommitteeMembers)
     } else if(members == "Advisior Members"){
-      setMembersData(loadAdvisiorMembers)
+      setMembersData(loadAdvisorMembers)
     }
   }, [members]);
   console.log(membersData, members);

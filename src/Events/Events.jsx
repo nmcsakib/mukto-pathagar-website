@@ -13,7 +13,7 @@ const Events = () => {
     const [full, setFull] = useState(false)
   return (
     <section className='container mx-auto px-8'>
-      <SectionTitle pathname={link.pathname} title={t("Events")} descrition={`Events of ${year}`} />
+      <SectionTitle pathname={link.pathname} title={t("Events")} description={`Events of ${year}`} />
 
       <div>
         <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">

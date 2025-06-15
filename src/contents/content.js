@@ -1,6 +1,6 @@
 // Our Activities
 
-const activitiesContent = [ "Books", "Society", "Climate", 'Studens', 'Womens']
+const activitiesContent = [ "Books", "Society", "Climate", 'Students', 'Women']
 
 // Our Activities
 
