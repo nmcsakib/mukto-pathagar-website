@@ -4,7 +4,7 @@ const Book = ({book}) => {
         <div className="w-full border rounded-md min-h-[450px]">
            
             <img
-                src={book?.picture === "" ? 'https://d827xgdhgqbnd.cloudfront.net/wp-content/uploads/2016/04/09121712/book-cover-placeholder.png' : book?.picture }
+                src={ !book?.picture ? 'https://d827xgdhgqbnd.cloudfront.net/wp-content/uploads/2016/04/09121712/book-cover-placeholder.png' : book?.picture }
                 alt={book?.bookName}
                 className="w-full h-[250px]"
             />

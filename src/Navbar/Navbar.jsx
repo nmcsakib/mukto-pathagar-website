@@ -12,8 +12,8 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const ResponsiveNavbar = () => {
 
-   const {user} = useContext(AuthContext);
-        console.log(user);
+  const { user } = useContext(AuthContext);
+  console.log(user);
 
   const navigate = useNavigate();
 
@@ -67,11 +67,11 @@ const ResponsiveNavbar = () => {
               title="Members"
               items={[
                 { name: "Founder", path: "/members/Founder" },
-                { name: "Advisior Members", path: "/members/Advisior Members" },
-                { name: "Guest Members", path: "/members/Guest Members" },
-                { name: "Life time Members", path: "/members/Life time Members" },
-                { name: "Committee Members", path: "/members/Committee Members" },
-                { name: "General Members", path: "/members/General Members" },
+                { name: "Adviser Members", path: "/members/Adviser-Members" },
+                { name: "Guest Members", path: "/members/Guest-Members" },
+                { name: "Life time Members", path: "/members/Life-time-Members" },
+                { name: "Committee Members", path: "/members/Committee-Members" },
+                { name: "General Members", path: "/members/General-Members" },
               ]}
             />
 
@@ -116,7 +116,7 @@ const ResponsiveNavbar = () => {
         <nav className="flex items-center justify-between w-full relative h-auto">
           <div className="flex-1">
             <h2 onClick={() => handleNavigation('/')} className="cursor-pointer font-semibold md:text-2xl md:block hidden">Mukto Pathagar</h2>
-                        <img onClick={() => handleNavigation('/')} className="cursor-pointer w-14 rounded-full md:hidden" src={logo} alt="" />
+            <img onClick={() => handleNavigation('/')} className="cursor-pointer w-14 rounded-full md:hidden" src={logo} alt="" />
           </div>
 
           {/* nav links */}
@@ -132,11 +132,11 @@ const ResponsiveNavbar = () => {
               label="Members"
               items={[
                 { label: 'Founder', path: '/members/Founder' },
-                { label: 'Advisior Members', path: '/members/Advisior Members' },
-                { label: 'Guest Members', path: '/members/Guest Members' },
-                { label: 'Life time Members', path: '/members/Life time Members' },
-                { label: 'Committee Members', path: '/members/Committee Members' },
-                { label: 'General Members', path: '/members/General Members' },
+                { label: 'adviser Members', path: '/members/Adviser-Members' },
+                { label: 'Guest Members', path: '/members/Guest-Members' },
+                { label: 'Life time Members', path: '/members/Life-time-Members' },
+                { label: 'Committee Members', path: '/members/Committee-Members' },
+                { label: 'General Members', path: '/members/General-Members' },
               ]}
             />
 
@@ -161,15 +161,15 @@ const ResponsiveNavbar = () => {
             </li>
             {
               user ? <Link to="http://localhost:5173/" className="transition-all duration-500 cursor-pointer hover:text-[#3B9DF8] capitalize">
-              <Button btnName={"Dashboard"} />
-            </Link> :
-            <Link to="/admin/login" className="transition-all duration-500 cursor-pointer hover:text-[#3B9DF8] capitalize">
-              <Button btnName={"Admin"} />
-            </Link>
+                <Button btnName={"Dashboard"} />
+              </Link> :
+                <Link to="/admin/login" className="transition-all duration-500 cursor-pointer hover:text-[#3B9DF8] capitalize">
+                  <Button btnName={"Admin"} />
+                </Link>
             }
           </ul>
-         
-           <div className="flex items-center gap-[10px]">
+
+          <div className="flex items-center gap-[10px]">
 
             <LangToggle />
             <div className="drawer-content flex gap-4 items-center justify-center">

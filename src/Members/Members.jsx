@@ -8,21 +8,21 @@ import 'swiper/css/navigation';
 import { FaXTwitter } from "react-icons/fa6";
 import { SwiperNavButtons } from "../components/SwiperNavButtons";
 import { useEffect, useState } from "react";
-import loadCommitteeMembers from '../Database/committee.json'
-import loadAdvisorMembers from '../Database/advisor.json'
 
 const Members = () => {
+
+ 
 
   const { members } = useParams();
   const [membersData, setMembersData] = useState([]);
   const [MemberData, setMemberData] = useState([]);
   const link = useLocation();
   useEffect(() => {
-    if (members == "Committee Members") {
-      setMembersData(loadCommitteeMembers)
-    } else if(members == "Advisior Members"){
-      setMembersData(loadAdvisorMembers)
-    }
+       fetch(`${process.env.SERVER}/members/${members}`).then(res => res.json()).then(data => {
+        
+         setMembersData(data)
+        console.log('data from server',data)})
+   
   }, [members]);
   console.log(membersData, members);
 

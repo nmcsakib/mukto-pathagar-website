@@ -6,9 +6,9 @@ const BookCategory = ({ categoryName }) => {
   const [allBooks, setAllBooks] = useState([]);
 
   useEffect(() => {
-    fetch('https://mocki.io/v1/e46c5798-5df9-4b3a-95b2-efa940183474')
+    fetch(`${process.env.SERVER}/All-books`)
       .then(res => res.json())
-      .then(data => setAllBooks(data));
+      .then(data => setAllBooks(data[0]));
   }, []);
 
   const result = useMemo(() => {

@@ -5,11 +5,10 @@ import Footer from './Footer/Footer'
 import './i18n.js';
 import ScrollToTop from './ScrollTop.jsx'
 import { useTranslation } from 'react-i18next';
-import { useLocation, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 function App() {
   const { i18n } = useTranslation();
-  const location = useLocation();
     const currentLang = i18n.language;
 
   return (

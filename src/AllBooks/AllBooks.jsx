@@ -7,6 +7,8 @@ import { useTranslation } from 'react-i18next';
 import Searchbar from '../components/SearchBar/SearchBar';
 import Book from './Book';
 import Pagination from '../components/Pagination/Pagination';
+import dotenv from 'dotenv';
+dotenv.config();
 
 
 const AllBooks = () => {
@@ -16,6 +18,7 @@ const AllBooks = () => {
 
   const [showBooks, setShowBooks] = useState([]);
   const [allBooks, setAllBooks] = useState([])
+  const [length, setLength] = useState(0)
 
   const [page, setPage] = useState(1);
   const itemsPerPage = 8;
@@ -26,11 +29,12 @@ const AllBooks = () => {
      ];
 
   useEffect(() => {
-    fetch('https://mocki.io/v1/e46c5798-5df9-4b3a-95b2-efa940183474').then(res => res.json()).then(data => {
+    fetch(`${process.env.SERVER}/All-books`).then(res => res.json()).then(data => {
 
-      setShowBooks(data.slice(0, 8))
-      setAllBooks(data)
-      // console.log(data)
+      setShowBooks(data[0].slice(0, 8))
+      setAllBooks(data[0])
+      setLength(data[1])
+      console.log(data)
     })
   }, [])
 
@@ -72,7 +76,7 @@ useEffect(() => {
             }
           </div>
         </div>
-        <Pagination length={allBooks.length} page={page} setPage={setPage} />
+        <Pagination length={length} page={page} setPage={setPage} />
       </div>
     )
 
