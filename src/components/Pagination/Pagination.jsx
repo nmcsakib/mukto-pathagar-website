@@ -85,7 +85,7 @@ const Pagination = ({length, page, setPage}) => {
 
     return (
         <div
-            className="flex justify-center items-center w-full mx-auto pt-10 gap-3">
+            className="flex flex-col md:flex-row justify-center items-center w-full mx-auto pt-10 gap-3">
 
             <button
                 onClick={handlePreviousPagination}

@@ -4,6 +4,7 @@ import { RouterProvider } from 'react-router-dom';
 import './index.css'
 import router from './Routes/Router.jsx';
 import { TbLoader3 } from 'react-icons/tb';
+import { AuthProvider } from './AuthProvider/AuthProvider.jsx';
 
 createRoot(document.getElementById('root')).render(
 
@@ -11,7 +12,9 @@ createRoot(document.getElementById('root')).render(
     
       <TbLoader3 className="text-[2.8rem] animate-spin text-[#3B9DF8]" />
     </div>}>
+    <AuthProvider>
         <RouterProvider router={router} />
+    </AuthProvider>
     </React.Suspense>
 
 )

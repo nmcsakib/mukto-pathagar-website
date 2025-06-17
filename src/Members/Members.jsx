@@ -38,8 +38,8 @@ const Members = () => {
 
             <div className="pb-10 px-5 text-black">
               <div className="flex bg-[#DEDEDE] p-3 flex-col items-center  relative rounded-xl shadow-lg">
-                <div className="relative">
-                  <img src="https://i.ibb.co/Cpc1y0Xg/image.png" className="w-80 h-64 rounded-2xl" />
+                <div className="relative w-50 h-50 rounded-full">
+                  <img src="https://i.ibb.co/Cpc1y0Xg/image.png" className="w-full h-full object-cover object-center rounded-full" />
 
                 </div>
                 <p className="text-2xl  font-semibold  py-2">
@@ -84,8 +84,8 @@ const Members = () => {
 
                     <div className="flex p-3 flex-col items-center  relative rounded-xl  text-base-content">
                       <div className=" rounded-2xl flex flex-col justify-center items-center custom-shadow px-5 py-8 md:min-w-[300px]">
-                        <div className="relative">
-                          <img src={member.image} alt="" className="w-40 h-40 rounded-[75%] border-gray-500 border" />
+                        <div className="relative w-50 h-50 rounded-full">
+                          <img src={member.image} alt="" className="w-full h-full object-cover  rounded-full"  />
 
                         </div>
                         <p className="md:text-2xl text-xl font-semibold  py-2">

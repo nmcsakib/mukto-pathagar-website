@@ -6,6 +6,7 @@ import AllBooks from "../AllBooks/AllBooks";
 import Members from "../Members/Members";
 import Events from "../Events/Events";
 import About from "../About/About";
+import LoginForm from "../components/LoginForm/LoginForm";
 
 const router = createBrowserRouter([
   {
@@ -36,7 +37,12 @@ const router = createBrowserRouter([
       {
         path: '/Books/:categories/:category',
         element: <Categories />
-      }
+      },
+      {
+        path: '/admin/login',
+        element: <LoginForm />
+      },
+     
     ]
 
   }

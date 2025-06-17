@@ -1,15 +1,19 @@
 
 // react icons
-import { CiMenuFries } from "react-icons/ci";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from '../assets/logo.jpeg'
 import LangToggle from "../Lang/LangToggle";
 import Button from "./Button";
 import SidebarSection from "./SidebarSection";
 import { BiMenu } from "react-icons/bi";
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const ResponsiveNavbar = () => {
+
+   const {user} = useContext(AuthContext);
+        console.log(user);
 
   const navigate = useNavigate();
 
@@ -21,7 +25,7 @@ const ResponsiveNavbar = () => {
 
   const DropdownMenu = ({ label, items }) => (
     <li className="relative group cursor-pointer transition-all duration-500 capitalize hover:text-[#3B9DF8] flex items-center gap-[3px]">
-      <Button btnName={label} arrow={true} />
+      <Button btnName={label} />
       <article className="absolute top-[40px] -left-2 z-[-1] group-hover:z-30 translate-y-[-20px] group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 p-6 bg-stone-300 rounded-md boxShadow">
         <ul className="flex flex-col text-[#424242]">
           {items.map(({ label, path }) => (
@@ -40,6 +44,7 @@ const ResponsiveNavbar = () => {
   return (
 
     <section className="container mx-auto px-8 normal-font">
+
       {/* Drawer */}
       <div className="drawer lg:drawer-close">
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
@@ -53,7 +58,7 @@ const ResponsiveNavbar = () => {
                 handleNavigation('/about');
                 document.getElementById('my-drawer').checked = false;
               }}>
-                <Button arrow={false} btnName="About Us" />
+                <Button btnName="About Us" />
               </a>
             </li>
 
@@ -97,7 +102,7 @@ const ResponsiveNavbar = () => {
                 }}
                 href="#contact"
               >
-                <Button arrow={false} btnName="Contact" />
+                <Button btnName="Contact" />
               </a>
               <img onClick={() => handleNavigation('/')} className="cursor-pointer w-14 rounded-full" src={logo} alt="logo" />
             </li>
@@ -119,7 +124,7 @@ const ResponsiveNavbar = () => {
 
             <li className="transition-all duration-500 cursor-pointer hover:text-[#3B9DF8] capitalize">
               <NavLink to={'/about'}>
-                <Button arrow={false} btnName={"About Us"} />
+                <Button btnName={"About Us"} />
               </NavLink>
             </li>
 
@@ -152,8 +157,16 @@ const ResponsiveNavbar = () => {
             />
 
             <li className="transition-all duration-500 cursor-pointer hover:text-[#3B9DF8] capitalize">
-              <a href="#contact"><Button arrow={false} btnName={"Contact"} /></a>
+              <a href="#contact"><Button btnName={"Contact"} /></a>
             </li>
+            {
+              user ? <Link to="http://localhost:5173/" className="transition-all duration-500 cursor-pointer hover:text-[#3B9DF8] capitalize">
+              <Button btnName={"Dashboard"} />
+            </Link> :
+            <Link to="/admin/login" className="transition-all duration-500 cursor-pointer hover:text-[#3B9DF8] capitalize">
+              <Button btnName={"Admin"} />
+            </Link>
+            }
           </ul>
          
            <div className="flex items-center gap-[10px]">
