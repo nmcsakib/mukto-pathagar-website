@@ -7,9 +7,6 @@ import { useTranslation } from 'react-i18next';
 import Searchbar from '../components/SearchBar/SearchBar';
 import Book from './Book';
 import Pagination from '../components/Pagination/Pagination';
-import dotenv from 'dotenv';
-dotenv.config();
-
 
 const AllBooks = () => {
   const link = useLocation();
@@ -29,7 +26,7 @@ const AllBooks = () => {
      ];
 
   useEffect(() => {
-    fetch(`${process.env.SERVER}/All-books`).then(res => res.json()).then(data => {
+    fetch(`${import.meta.env.VITE_SERVER}/All-books`).then(res => res.json()).then(data => {
 
       setShowBooks(data[0].slice(0, 8))
       setAllBooks(data[0])

@@ -18,9 +18,31 @@ const Members = () => {
   const [MemberData, setMemberData] = useState([]);
   const link = useLocation();
   useEffect(() => {
-       fetch(`${process.env.SERVER}/members/${members}`).then(res => res.json()).then(data => {
+       fetch(`${import.meta.env.VITE_SERVER}/members`).then(res => res.json()).then(data => {
         
-         setMembersData(data)
+         if(members === "Committee-Members"){
+          const mems = data.filter(datum => datum?.type === "Committee")
+          setMembersData(mems)
+         }
+         else if(members === "Adviser-Members"){
+          const mems = data.filter(datum => datum?.type === "Adviser")
+          setMembersData(mems)
+         } 
+         else if(members === "Guest-Members"){
+          const mems = data.filter(datum => datum?.type === "Guest")
+          setMembersData(mems.length < 1 ? data : mems)
+         } 
+         else if(members === "General-Members"){
+          const mems = data.filter(datum => datum?.type === "General")
+          setMembersData(mems.length < 1 ? data : mems)
+         } 
+         else if(members === "Life-time-Members"){
+          const mems = data.filter(datum => datum?.type === "Life-time")
+          setMembersData(mems.length < 1 ? data : mems)
+         } 
+         else{
+          setMembersData(data)
+         }
         console.log('data from server',data)})
    
   }, [members]);

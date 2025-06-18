@@ -1,6 +1,7 @@
 [
   {
     "name": "শাহজালাল আরিফ",
+    "type": "Committee",
     "designation": "সভাপতি",
     "social_media": {
       "facebook": "",
@@ -14,6 +15,7 @@
   },
   {
     "name": "সিফাতুল ইসলাম ফাহিম",
+    "type": "Committee",
     "designation": "সহ-সভাপতি",
     "social_media": {
       "facebook": "",
@@ -27,6 +29,7 @@
   },
   {
     "name": "সামছুল আলম অপি",
+    "type": "Committee",
     "designation": "সহ-সভাপতি",
     "social_media": {
       "facebook": "",
@@ -40,6 +43,7 @@
   },
   {
     "name": "তৌফিকুল ইসলাম আকাশ",
+    "type": "Committee",
     "designation": "সাধারণ সম্পাদক",
     "social_media": {
       "facebook": "",
@@ -53,6 +57,7 @@
   },
   {
     "name": "কে এম আশরাফ উল্যাহ",
+    "type": "Committee",
     "designation": "যুগ্ম- সাধারণ সম্পাদক",
     "social_media": {
       "facebook": "",
@@ -66,6 +71,7 @@
   },
   {
     "name": "আবদুন নূর সারোয়ার রাশেদ",
+    "type": "Committee",
     "designation": "যুগ্ম- সাধারণ সম্পাদক",
     "social_media": {
       "facebook": "",
@@ -79,6 +85,7 @@
   },
   {
     "name": "নূর মোহাম্মদ চৌধুরী সাকিব",
+    "type": "Committee",
     "designation": "সাংগঠনিক সম্পাদক",
     "social_media": {
       "facebook": "",
@@ -92,6 +99,7 @@
   },
   {
     "name": "সায়েমা সুলতানা",
+    "type": "Committee",
     "designation": "তথ্য ও গবেষণা সম্পাদক",
     "social_media": {
       "facebook": "",
@@ -105,6 +113,7 @@
   },
   {
     "name": "আহমদ বিন খাত্তাব",
+    "type": "Committee",
     "designation": "সহ-তথ্য ও গবেষণা সম্পাদক",
     "social_media": {
       "facebook": "",
@@ -118,6 +127,7 @@
   },
   {
     "name": "তাহমিনা বিনতে আনোয়ার",
+    "type": "Committee",
     "designation": "সাহিত্য সম্পাদক",
     "social_media": {
       "facebook": "",
@@ -131,6 +141,7 @@
   },
   {
     "name": "ইকরাম চৌধুরী রাফি",
+    "type": "Committee",
     "designation": "সহ-সাহিত্য সম্পাদক",
     "social_media": {
       "facebook": "",
@@ -144,6 +155,7 @@
   },
   {
     "name": "আবুল কালাম তারিন",
+    "type": "Committee",
     "designation": "সাংস্কৃতিক বিষয়ক সম্পাদক",
     "social_media": {
       "facebook": "",
@@ -157,6 +169,7 @@
   },
   {
     "name": "সাখায়েত উল্যাহ রনি",
+    "type": "Committee",
     "designation": "সমাজ কল্যাণ বিষয়ক সম্পাদক",
     "social_media": {
       "facebook": "",
@@ -170,6 +183,7 @@
   },
   {
     "name": "জান্নাতুল ফেরদাউস মিম",
+    "type": "Committee",
     "designation": "অর্থ সম্পাদক",
     "social_media": {
       "facebook": "",
@@ -183,6 +197,7 @@
   },
   {
     "name": "জিলস্নুর রহমান জিহাদ",
+    "type": "Committee",
     "designation": "পাঠাগার সম্পাদক",
     "social_media": {
       "facebook": "",
@@ -196,6 +211,7 @@
   },
   {
     "name": "নূর ইসলাম জয়",
+    "type": "Committee",
     "designation": "দপ্তর সম্পাদক",
     "social_media": {
       "facebook": "",
@@ -209,6 +225,7 @@
   },
   {
     "name": "শাকিয়ান মাহমুদ",
+    "type": "Committee",
     "designation": "ধর্ম বিষয়ক সম্পাদক",
     "social_media": {
       "facebook": "",
@@ -222,6 +239,7 @@
   },
   {
     "name": "সাফায়েত হোসেন রাফি",
+    "type": "Committee",
     "designation": "প্রচার সম্পাদক",
     "social_media": {
       "facebook": "",
@@ -235,6 +253,7 @@
   },
   {
     "name": "ইয়াছিন তুষার",
+    "type": "Committee",
     "designation": "সদস্য সচিব",
     "social_media": {
       "facebook": "",
@@ -248,6 +267,7 @@
   },
   {
     "name": "ফৌজিয়া আফরিন যুথি",
+    "type": "Committee",
     "designation": "সদস্য",
     "social_media": {
       "facebook": "",
@@ -261,6 +281,7 @@
   },
   {
     "name": "ওমর ফারুক সিদ্দিকী",
+    "type": "Committee",
     "designation": "সদস্য",
     "social_media": {
       "facebook": "",

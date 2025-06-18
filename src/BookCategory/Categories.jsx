@@ -11,7 +11,7 @@ const Categories = () => {
 
   const [allBooks, setAllBooks] = useState([]);
   useEffect(() => {
-    fetch(`${process.env.SERVER}/All-books`)
+    fetch(`${import.meta.env.VITE_SERVER}/All-books`)
       .then(res => res.json())
       .then(data => setAllBooks(data[0]));
   }, []);
