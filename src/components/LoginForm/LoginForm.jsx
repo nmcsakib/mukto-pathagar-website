@@ -89,7 +89,7 @@ const handleLogin = (e) => {
   signIn(email, password)
     .then((res) => {
       setUser(res.user);
-  window.location.href = "http://localhost:5173/";
+  window.location.href = import.meta.env.VITE_ADMIN_PANEL;
      
     })
     .catch((error) => {

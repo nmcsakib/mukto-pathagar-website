@@ -160,7 +160,7 @@ const ResponsiveNavbar = () => {
               <a href="#contact"><Button btnName={"Contact"} /></a>
             </li>
             {
-              user ? <Link to="http://localhost:5173/" className="transition-all duration-500 cursor-pointer hover:text-[#3B9DF8] capitalize">
+              user ? <Link to={import.meta.env.VITE_ADMIN_PANEL} className="transition-all duration-500 cursor-pointer hover:text-[#3B9DF8] capitalize">
                 <Button btnName={"Dashboard"} />
               </Link> :
                 <Link to="/admin/login" className="transition-all duration-500 cursor-pointer hover:text-[#3B9DF8] capitalize">
